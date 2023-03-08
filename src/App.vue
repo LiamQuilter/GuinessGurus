@@ -1,7 +1,12 @@
-<template>
+<script setup>
+  import NavBar from './components/NavBar.vue'
+</script>
+
+
+<template>  
 <div>
- <header>
-      <h1 style="color: green;">Welcome To Guinness Gurus!</h1>
-    </header>
+  <NavBar />
+  <h1 style="color: Green">There is a nav bar now</h1>
+  
 </div>
 </template>
