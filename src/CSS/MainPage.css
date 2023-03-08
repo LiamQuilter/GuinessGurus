@@ -1,0 +1,130 @@
+wbody {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5DC;
+  }
+  
+  header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Aclonica';font-size: 20px;
+    color: rgb(0, 0, 0);
+  }
+  
+  nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+
+  .container {
+    width: 400px;
+    height: 500px;
+    background-color: gray;
+    border: 1px solid black;
+    float: left;
+    margin: 10px;
+    position: relative; /* To position the image inside the container */
+  }
+
+  .container img {
+    position: absolute; /* To position the image relative to the container */
+    top: 0; /* To position the image at the top of the container */
+    left: 0; /* To position the image at the left of the container */
+    height: 40%; /* To set the height of the image to 80 pixels (40% of the container height) */
+    width: 100%; /* To make the image fill the width of the container */
+  }
+
+  .container .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; /* below the image */
+    background-color: #fff; /* to create a background for the text */
+    opacity: 0.8; /* to make the background semi-transparent */
+    text-align: center;
+
+  }
+  
+  .container .span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; /* below the text */
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    
+  }
+  
+  
+  .pub {
+    background-color: #f2f2f2;
+    border: 2px solid #333;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .pub h2{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .pub img{
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+  
+  .pub .rating{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #5e5e5e;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 50;
+    max-width: 10%;
+    max-height: 15%;
+    padding: 5px;
+
+  }
+  
+  footer {
+    background-color: #5e5e5e;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  
