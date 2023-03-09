@@ -1,3 +1,15 @@
+<script>
+
+
+  export default {
+    name: "PubListItem",
+    props: {
+      pub: Object,
+    }
+ 
+  }
+</script>
+
 <template>
   <div class="card m-2">
     <div class="card-image">
@@ -23,22 +35,13 @@
 
     <div class="content">
       {{ pub.address }} 
-      <a :href="pub.instagramLink">Instagram</a>.
+      <a :href="pub.instagramLink">Instagram</a>
       <a :href="pub.websiteLink">Website</a>
       {{pub.phoneNumber}}
       <br />
     </div>
   </div>
 </template>
-
-<script>
-  export default {
-    name: "PubListItem",
-    props: {
-      pub: Object,
-    }
-  };
-</script>
 
 <style>
   .card {
