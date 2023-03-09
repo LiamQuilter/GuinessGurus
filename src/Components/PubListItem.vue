@@ -23,9 +23,9 @@
 
     <div class="content">
       {{ pub.address }} 
-      <a :href="pub.instagramLink">Instagram</a>.
+      <br>{{pub.phoneNumber}}
+      <br><a :href="pub.instagramLink">Instagram</a>, 
       <a :href="pub.websiteLink">Website</a>
-      {{pub.phoneNumber}}
       <br />
     </div>
   </div>
