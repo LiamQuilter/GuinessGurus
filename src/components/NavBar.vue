@@ -14,8 +14,10 @@
   
     <div id="navbar" class="navbar-menu">
       <div class="navbar-start">
-        <router-link to="/" class="navbar-item  has-text-black-ter">
-          Home 
+        <router-link to="/" class="navbar-item has-text-black-ter">
+          Home  <span class="material-symbols-outlined">
+            home
+            </span>
         </router-link>
         <router-link to="/aboutUs" class="navbar-item  has-text-black-ter">
           About Us 
