@@ -20,10 +20,6 @@
         <router-link to="/aboutUs" class="navbar-item  has-text-black-ter">
           About Us 
         </router-link>
-        <router-link to="/contact" class="navbar-item  has-text-black-ter">
-          Contact 
-        </router-link>
-        
       </div>
   
       <div class="navbar-end">
