@@ -1,23 +1,8 @@
-<script>
-
-
-  export default {
-    name: "PubListItem",
-    props: {
-      pub: Object,
-    }
- 
-  }
-</script>
-
 <template>
   <div class="card m-2">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img
-          class="imgSize"
-          :src="pub.imageSrc"
-        >
+        <img class="imgSize" :src="pub.imageSrc" />
       </figure>
     </div>
 
@@ -26,22 +11,29 @@
         <p class="title is-4">{{ pub.title }}</p>
         <router-link to="/pubItem" class="button is-primary">
           See more
-          <span class="material-symbols-outlined pl-3">
-            arrow_forward_ios
-          </span>
+          <span class="material-symbols-outlined pl-3">arrow_forward_ios</span>
         </router-link>
       </div>
     </div>
 
     <div class="content">
-      {{ pub.address }} 
+      {{ pub.address }}
       <a :href="pub.instagramLink">Instagram</a>
       <a :href="pub.websiteLink">Website</a>
-      {{pub.phoneNumber}}
+      {{ pub.phoneNumber }}
       <br />
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "PubListItem",
+  props: {
+    pub: Object,
+  },
+};
+</script>
 
 <style>
   .card {
@@ -53,5 +45,11 @@
   }
   .title {
     color: rgb(29, 235, 235);
+  }
+  .imgSize {
+    transition: transform 0.3s ease-in-out;
+  }
+  .imgSize:hover {
+    transform: scale(1.05);
   }
 </style>
