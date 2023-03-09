@@ -14,13 +14,13 @@
   
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item  has-text-black-ter">
+        <router-link to="/" class="navbar-item  has-text-black-ter">
           Home
-        </a>
+        </router-link>
   
-        <a class="navbar-item  has-text-black-ter">
+        <router-link to="/" class="navbar-item  has-text-black-ter">
           Pubs
-        </a>
+        </router-link>
   
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link  has-text-black-ter">
@@ -41,12 +41,12 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-white">
+            <router-link to="/signup"> <a class="button is-white">
               <strong>Sign up</strong>
-            </a>
-            <a class="button is-link">
+            </a></router-link>
+            <router-link to="/login"><a class="button is-link">
               Log in
-            </a>
+            </a></router-link>
           </div>
         </div>
       </div>
