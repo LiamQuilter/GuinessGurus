@@ -15,7 +15,7 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <router-link to="/" class="navbar-item  has-text-black-ter">
-          Home
+          Home 
         </router-link>
   
         <router-link to="/" class="navbar-item  has-text-black-ter">
