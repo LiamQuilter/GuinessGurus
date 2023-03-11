@@ -1,4 +1,7 @@
 <template>
+
+  
+
 <nav class="navbar has-background-primary-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item">
@@ -55,3 +58,4 @@
     </div>
   </nav>
 </template>
+
