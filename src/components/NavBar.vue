@@ -1,4 +1,7 @@
 <template>
+
+  
+
 <nav class="navbar has-background-primary-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link to ="/" class="navbar-item is-size-2 has-text-black-bis">
@@ -39,3 +42,4 @@
     </div>
   </nav>
 </template>
+
