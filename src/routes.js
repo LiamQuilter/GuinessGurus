@@ -18,7 +18,7 @@ const routes = [
         component: SignUp
     },
     {
-        path: '/pubItem',
+        path: '/pubItem/:id',
         component: Pub
     }
 ]

@@ -1,18 +1,24 @@
 <template>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
+    rel="stylesheet"
+  />
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&family=Tilt+Prism&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&family=Tilt+Prism&display=swap"
+    rel="stylesheet"
+  />
 
   <div class="grid-container">
     <div class="left-column">
       <div class="image-container">
         <hr class="line-before-image" />
-        <img class="images" src="../../Images/An-Pucan.jpg" />
+        <img class="images" :src="pub.imageSrc" />
         <hr class="line-after-image" />
       </div>
-      <strong class="PubName">An Púcán</strong>
+      <strong class="PubName">{{ pub.title }}</strong>
 
       <div class="rating-section">
         <h2>Taste</h2>
@@ -111,39 +117,34 @@
       </div>
     </div>
     <div class="right">
-      <h1 class="heading">About An Púcán </h1>
+      <h1 class="heading">{{pub.about}}</h1>
       <p>
-        An Púcán is a traditional Irish pub located in the heart of Galway City,
-        just a stone's throw from Eyre Square. It's a favorite spot for locals
-        and tourists alike, with a lively atmosphere, great music, and a wide
-        range of drinks and food. Whether you're looking for a quiet pint, a
-        night out with friends, or some live music, An Púcán is the place to be.
+        {{pub.AboutParagraph}}
       </p>
 
       <h2 class="heading">Address</h2>
       <P>
-        <span class="material-symbols-outlined red-pin"> pin_drop </span> 11 Forster
-        Street, Galway City, Ireland
+        <span class="material-symbols-outlined red-pin"> pin_drop </span> 
+        {{pub.address}}
       </P>
-
+      
       <h3 class="heading">Links</h3>
       <p>
-        <a href="https://anpucan.ie/">
-          <span class="material-symbols-outlined blue-world"> language </span> Website</a
+        <a :href="pub.WebsiteLink">
+          <span class="material-symbols-outlined blue-world"> language </span>
+          Website</a
         >
       </p>
 
       <p>
-        
-          <span class="material-symbols-outlined"> mail </span> info@anpucan.ie
+        <span class="material-symbols-outlined"> mail </span> {{pub.websiteLink}}
       </p>
 
       <p>
-        <span class="material-symbols-outlined"> phone_iphone </span> +353 91
-        376 561
+        <span class="material-symbols-outlined"> phone_iphone </span> {{pub.phoneNumber}}
       </p>
 
-      <h4 class="heading">An Púcán overall rating</h4>
+      <h4 class="heading">{{pub.title}} overall rating</h4>
       <span class="f" style="color: black; font-size: 2em">✰</span>
       <span class="f" style="color: black; font-size: 2em">✰</span>
       <span class="f" style="color: black; font-size: 2em">✰</span>
@@ -164,7 +165,7 @@
     <div class="comments">
       <div class="comment">
         <div class="user">John Doe</div>
-        <div class="text">White only pub really enjoyed it</div>
+        <div class="text">nice pub really enjoyed it</div>
       </div>
       <div class="comment">
         <div class="user">Jane Smith</div>
@@ -172,9 +173,7 @@
       </div>
       <div class="comment">
         <div class="user">Mike Johnson</div>
-        <div class="text">
-          No Niggers no nonsence!
-        </div>
+        <div class="text">No </div>
       </div>
       <div class="comment">
         <div class="user">Sarah Wilson</div>
@@ -201,10 +200,13 @@
 </template>
 
 <script>
+import Pubs from '../data';
 export default {
   name: "AnPucan",
+
   data() {
     return {
+      pub: Pubs.find(pub => pub.id == this.$route.params.id),
       tasteRating: 0,
       priceRating: 0,
       shtickRating: 0,
