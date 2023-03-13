@@ -16,6 +16,7 @@
 
 
 <template>
+
   <div>
     <div class="container-grid rounded-corners">
       <PubListItem
@@ -28,13 +29,15 @@
 </template>
 
 <style>
+
+
   .container-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 10px;
     float: left;
-    margin: 100px;
+    margin: 30px;
     position: relative;
   }
 

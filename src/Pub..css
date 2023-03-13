@@ -1,6 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  font-size: 90%;
 }
 
 /* Use flexbox to center the grid */
@@ -8,8 +9,9 @@ body > .grid-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   margin: 0;
+  width: 90%;
 }
 
 .grid-container {
@@ -114,6 +116,7 @@ body > .grid-container {
   transition: 0.4s;
   border: none;
   cursor: pointer;
+ 
 }
 
 .submit-rating:hover,
