@@ -4,6 +4,7 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
   </head>
 
   <nav
@@ -203,7 +204,7 @@
 
 .title {
   font-size: 48px;
-  font-family: "Pacifico", cursive;
+  font-family: 'Forum', cursive;
   left: 60%; /* add this line */
 }
 
