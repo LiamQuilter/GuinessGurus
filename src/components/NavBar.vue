@@ -13,10 +13,6 @@
     aria-label="main navigation"
     style="background: linear-gradient(to right, #845ec2, #00c9ff)"
   >
-
-  
-
-
   
     <div class="navbar-brand">
       <a
@@ -64,6 +60,7 @@
           >
             <i class="fa-regular fa-circle-user fa-xl"></i>
           </router-link>
+
         </div>
       </div>
     </div>

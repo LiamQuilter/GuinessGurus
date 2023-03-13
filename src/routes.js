@@ -3,6 +3,7 @@ import Home from './Pages/Home.vue'
 import Login from './Pages/Login.vue'
 import SignUp from './Pages/SignUp.vue'
 import Pub from './Pages/Pub.vue'
+import About from './Pages/About.vue'
 
 const routes = [
     {
@@ -20,6 +21,10 @@ const routes = [
     {
         path: '/pubItem/:id',
         component: Pub
+    },
+    {
+        path: '/aboutUs',
+        component: About
     }
 ]
 
