@@ -1,16 +1,21 @@
-<script>
-  import NavBar from './components/NavBar.vue'
- 
+<template>
+  <div class="page-container">
+    <NavBar />
+    <router-view />
+    <Footer />
+  </div>
+</template>
 
-  export default {
-    components:{
-      NavBar
-    }
+<script>
+import NavBar from './components/NavBar.vue'
+
+
+export default {
+  components: {
+    NavBar,
+
   }
+}
 </script>
 
-<template>  
-  <NavBar />
-  <router-view></router-view>
-  
-</template>
+

@@ -4,7 +4,14 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   </head>
 
   <nav
@@ -13,29 +20,12 @@
     aria-label="main navigation"
     style="background: linear-gradient(to right, #845ec2, #00c9ff)"
   >
-  
-    <div class="navbar-brand">
-      <a
-        role="button"
-        class="navbar-burger"
-        aria-label="menu"
-        aria-expanded="false"
-        data-target="navbarBasicExample"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+    <div class="navbar-end">
+      <a>
+        <router-link to="/">
+          <h2 class="title">&nbsp;&nbsp;&nbsp;&nbsp; Guinness Gurus</h2>
+        </router-link>
       </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-end">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          <router-link to="/">
-            <h2 class="title">Guinness Gurus</h2>
-          </router-link>
-        </a>
-      </div>
     </div>
 
     <div class="navbar-end">
@@ -52,6 +42,7 @@
           </router-link>
 
           <router-link
+            id="login-link"
             to="/login"
             class="button is-link"
             data-tooltip="Login"
@@ -60,17 +51,16 @@
           >
             <i class="fa-regular fa-circle-user fa-xl"></i>
           </router-link>
-
         </div>
       </div>
     </div>
   </nav>
 </template>
 
+
+
+
 <style scoped>
-.router-link-active .button {
-  background-color: #eee;
-}
 .navbar-start {
   display: flex;
   align-items: center;
@@ -132,10 +122,6 @@
 .button.is-link:hover ~ .button.is-white:hover strong:before,
 .button.is-white:hover ~ .button.is-link:hover strong:before {
   opacity: 1;
-}
-
-.button {
-  position: relative;
 }
 
 .button:hover + .tooltip {
@@ -201,8 +187,10 @@
 
 .title {
   font-size: 48px;
-  font-family: 'Forum', cursive;
-  left: 60%; /* add this line */
+  font-family: 'Satisfy', cursive;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
 .buttons {
@@ -213,4 +201,6 @@
 .button.is-Home {
   margin-right: 10px;
 }
+
+
 </style>
