@@ -11,6 +11,8 @@
     rel="stylesheet"
   />
 
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
   <div class="grid-container">
     <div class="left-column">
       <div class="image-container">
@@ -117,41 +119,66 @@
       </div>
     </div>
     <div class="right">
-      <h1 class="heading">{{pub.about}}</h1>
+      <h1 class="heading">{{ pub.about }}</h1>
       <p>
-        {{pub.AboutParagraph}}
+        {{ pub.AboutParagraph }}
       </p>
 
       <h2 class="heading">Address</h2>
-      <P>
-        <span class="material-symbols-outlined red-pin"> pin_drop </span> 
-        {{pub.address}}
+      <P style="background-color: white; border-radius: 10px; padding: 10px; display: inline-block;">
+        <i 
+          class="fa-solid fa-location-dot fa-flip"
+          style="--fa-animation-duration: 3s; color: crimson;"
+        ></i>
+        {{ pub.address }}
       </P>
-      
+
       <h3 class="heading">Links</h3>
+      <P class="links">
       <p>
-        <a :href="pub.WebsiteLink">
-          <span class="material-symbols-outlined blue-world"> language </span>
+        <a :href="pub.WebsiteLink"  style="color:blue">
+          <i class="fa-solid fa-globe"></i>
           Website</a
         >
       </p>
 
       <p>
-        <span class="material-symbols-outlined"> mail </span> {{pub.websiteLink}}
+        <a :href="pub.websiteLink"  style="color:forestgreen;"
+          ><i class="fa-solid fa-envelope"></i> Email now!</a
+        >
       </p>
 
       <p>
-        <span class="material-symbols-outlined"> phone_iphone </span> {{pub.phoneNumber}}
+        <i class="fa-sharp fa-solid fa-phone-volume" style="color:black;"></i> {{ pub.phoneNumber }}
       </p>
 
-      <h4 class="heading">{{pub.title}} overall rating</h4>
-      <span class="f" style="color: black; font-size: 2em">✰</span>
-      <span class="f" style="color: black; font-size: 2em">✰</span>
-      <span class="f" style="color: black; font-size: 2em">✰</span>
-      <span class="f" style="color: gblack; font-size: 2em">✰</span>
-      <p>rated 4.3 from 4 ratings</p>
+      <p>
+        <a :href="pub.instagramLink" class="insta">
+          <i class="fa-brands fa-instagram pulse"></i> Instagram
+        </a>
+      </p>
+    </p>
+
+      <h4 class="heading">{{ pub.title }} overall rating</h4>
+      <p class="whiteBorderStar">
+      <i
+        class="fa-solid fa-star fa-lg fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;color: gold; margin-right: 5px"
+      ></i>
+      <i
+      class="fa-solid fa-star fa-lg fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;color: gold; margin-right: 5px"
+      ></i>
+      <i
+      class="fa-solid fa-star fa-lg fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;color: gold; margin-right: 5px"
+      ></i>
+      <i
+      class="fa-solid fa-star fa-lg fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;color: gold; margin-right: 5px"
+      ></i>
+      <p class="ratingStatment">Rated 4.3 from 4 Ratings!</p>
+      </p>
     </div>
   </div>
+
+  
 
   <div class="comment-section">
     <h2 class="question">Tell us what you think!</h2>
@@ -173,7 +200,7 @@
       </div>
       <div class="comment">
         <div class="user">Mike Johnson</div>
-        <div class="text">No </div>
+        <div class="text">No</div>
       </div>
       <div class="comment">
         <div class="user">Sarah Wilson</div>
@@ -200,13 +227,13 @@
 </template>
 
 <script>
-import Pubs from '../data';
+import Pubs from "../data";
 export default {
   name: "AnPucan",
 
   data() {
     return {
-      pub: Pubs.find(pub => pub.id == this.$route.params.id),
+      pub: Pubs.find((pub) => pub.id == this.$route.params.id),
       tasteRating: 0,
       priceRating: 0,
       shtickRating: 0,

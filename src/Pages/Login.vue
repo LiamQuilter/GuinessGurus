@@ -19,7 +19,7 @@
                     <i class="fa-solid fa-lock"></i>
                      <input type="password" placeholder="Password" name="">
                  </span><br>
-                     <button>login</button>
+                     <button type="submit" id="login-btn">Login</button>
             </form>
         </div>
          </div>

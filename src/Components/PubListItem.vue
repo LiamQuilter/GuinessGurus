@@ -25,17 +25,20 @@
     </div>
 
     <div class="content">
-      <span class="material-symbols-outlined icon-down">
-        <span class="material-symbols-outlined">location_on</span>
-      </span >
+      <i 
+      class="fa-solid fa-location-dot"
+      style=" color: crimson; font-size: 23px"
+    ></i>
       {{ pub.address }}
       <br />
-      <span class="material-symbols-outlined"> phone_iphone </span
-      >{{ pub.phoneNumber }}
+      <i class="fa-sharp fa-solid fa-phone-volume"
+      style=" color:black; font-size: 15px"
+      ></i>
+      {{ pub.phoneNumber }}
       <br />
       <div style="display: flex; align-items: center">
         <p style="margin-right: 10px">
-          <i class="fa-solid fa-users"></i> Social media:
+          <i class="fa-solid fa-users" style="color:royalblue;"></i> Social media:
         </p>
         <a
           :href="pub.instagramLink"
@@ -52,6 +55,8 @@
           </span>
         </a>
       </div>
+
+      
 
       <br />
     </div>
@@ -125,7 +130,7 @@ document.body.appendChild(script);
   display: inline-block;
   margin-right: 5px;
   color: #555; /* Change this value to adjust the icon color */
-  margin-left: 20px;
+  margin-left: 15px;
 }
 .social-icon:hover {
   color: #00a0d2; /* Change this value to adjust the hover color */
