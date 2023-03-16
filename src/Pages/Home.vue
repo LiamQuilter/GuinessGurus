@@ -1,8 +1,17 @@
+<template>
+  <div class="container">
+    <div class="pub-list">
+      <PubListItem v-for="(pub, index) in Pubs" :key="index" :pub="pub" />
+    </div>
+  </div>
+</template>
+
 <script>
-    import PubListItem from '../components/PubListItem.vue'
-    import PropDemo from '../Components/PropDemo.vue'
-    import Pubs from '../data'
-    export default {
+import PubListItem from '../components/PubListItem.vue'
+import PropDemo from '../Components/PropDemo.vue'
+import Pubs from '../data'
+
+export default {
   components: {
     PubListItem,
   },
@@ -14,52 +23,30 @@
 };
 </script>
 
-
-<template>
-
-  <div>
-    <div class="container-grid rounded-corners">
-      <PubListItem
-        v-for="(pub, index) in Pubs"
-        :key="index"
-        :pub="pub"
-      />
-    </div>
-  </div>
-</template>
-
-
-
 <style>
-.container-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-gap: 10px;
-  float: left;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 30px;
-  position: relative;
 }
 
-.rounded-corners {
-  border-radius: 25px;
+.pub-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
   border: 2px solid #6f6e6e;
+  border-radius: 10px;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 767px) {
-  .container-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 10px;
-    margin: 30px;
-  }
-
-  .rounded-corners {
-    border-radius: 25px;
-    border: 2px solid #6f6e6e;
-    padding: 20px;
+  .pub-list {
+    gap: 10px;
   }
 }
 </style>

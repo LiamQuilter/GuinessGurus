@@ -60,6 +60,11 @@
 
       <br />
     </div>
+
+   
+
+
+
   </div>
 </template>
 
@@ -94,6 +99,7 @@ document.body.appendChild(script);
   padding: 5px; /* Add some padding for spacing */
   border-radius: 10px; /* Add a border-radius for a softer look */
 }
+
 .card-content {
   display: flex;
   justify-content: center;

@@ -30,7 +30,7 @@ body > .grid-container {
   position: absolute;
   top: 0;
   left: -75px;
-  height: 1600px;
+  height: 1300px;
   width: 1px;
   background-color: black;
 }
@@ -39,7 +39,7 @@ body > .grid-container {
   position: absolute;
   top: 0;
   right: -75px;
-  height: 1600px;
+  height: 1300px;
   width: 1px;
   background-color: black;
 }
@@ -56,6 +56,7 @@ body > .grid-container {
   max-width: 300px;
   height: 200px;
   object-fit: cover;
+ 
 }
 
 .PubName {
@@ -152,6 +153,8 @@ body > .grid-container {
   padding: 30px;
 }
 
+
+
 .question {
   font-family: "Pacifico", cursive;
 }
@@ -163,7 +166,7 @@ body > .grid-container {
   background-color: #ffffff;
   border-radius: 10px;
   position: relative; /* Required for pseudo-elements */
-  right: 25%;
+
   max-height: 400px;
 }
 
@@ -360,5 +363,33 @@ p {
   .nav-toggle:checked ~ .main {
     display: none;
   }
+  .grid-container {
+    display: block;
+    height: auto;
+  }
 
+  .grid-container > div {
+    width: 100%;
+    float: none;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .rating-section {
+    order: 1;
+  }
+  
+  .about-section {
+    order: 2;
+  }
+  
+  .comment-section {
+    order: 3;
+  }
 }
+
+
