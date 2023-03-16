@@ -3,6 +3,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;   
     height: 100%; /* adjust as needed */
+
 }
 .wrapper{
     width:350px;
