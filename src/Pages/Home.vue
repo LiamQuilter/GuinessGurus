@@ -1,9 +1,11 @@
 <template>
+  <body>
   <div class="container">
     <div class="pub-list">
       <PubListItem v-for="(pub, index) in Pubs" :key="index" :pub="pub" />
     </div>
   </div>
+</body>
 </template>
 
 <script>
@@ -24,11 +26,12 @@ export default {
 </script>
 
 <style>
+
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 30px;
+
 }
 
 .pub-list {
@@ -38,10 +41,13 @@ export default {
   gap: 20px;
   max-width: 1200px;
   width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
   border: 2px solid #6f6e6e;
   border-radius: 10px;
   padding: 20px;
-  box-sizing: border-box;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 @media only screen and (max-width: 767px) {

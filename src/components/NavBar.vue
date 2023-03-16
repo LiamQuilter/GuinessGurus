@@ -12,13 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Noto+Serif+Lao&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
   </head>
 
-  <nav
+  <nav 
     class="navbar"
     role="navigation"
     aria-label="main navigation"
-    style="background: linear-gradient(to right, #845ec2, #00c9ff)"
+    style= "background: linear-gradient(to top, #000000,#000000,#000000, #4c2e10, #8b572a, #b58d68, #f7f3e9,#f7f3e9)"
+    
   >
     <div class="navbar-end">
       <a>
@@ -27,6 +32,9 @@
         </router-link>
       </a>
     </div>
+
+    
+
 
     <div class="navbar-end">
       <div class="navbar-item">
@@ -61,6 +69,19 @@
 
 
 <style scoped>
+  .navbar {
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeInNav 1s ease-in-out forwards; /* Set animation properties */
+  }
+  
+  @keyframes fadeInNav {
+    from {
+      opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+      opacity: 1; /* End with opacity 1 */
+    }
+  }
 .navbar-start {
   display: flex;
   align-items: center;
@@ -186,12 +207,17 @@
 }
 
 .title {
-  font-size: 48px;
-  font-family: 'Satisfy', cursive;
-  font-weight: bold;
-  padding-top: 15px;
-  padding-bottom: 30px;
-}
+    font-size: 48px;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    color: #fefdfc; /* Darker shade of gold */
+    text-shadow: #000;
+    display: inline-block; /* Ensures that the border wraps around the text */
+    padding-left: 20px; /* Adds some padding to the left of the text */
+    padding-right: 20px; /* Adds some padding to the right of the text */
+  }
 
 .buttons {
   display: flex;
