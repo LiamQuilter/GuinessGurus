@@ -117,7 +117,34 @@
           Your Rating: {{ yourRating }}/5 stars
         </div>
       </div>
+
+      <div class="comment-section">
+    <h2 class="question">Tell us what you think!</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <label for="comment">Comment:</label>
+      <textarea id="comment" name="comment"></textarea>
+      <button class="submit-comment" type="submit">Submit</button>
+    </form>
+    <div class="comments">
+      <div class="comment">
+        <div class="user">John Doe</div>
+        <div class="text">nice pub really enjoyed it</div>
+      </div>
+      <div class="comment">
+        <div class="user">Jane Smith</div>
+        <div class="text">They allow the right type of dogs in this pub</div>
+      </div>
+      <div class="comment">
+        <div class="user">Mike Johnson</div>
+        <div class="text">No</div>
+      </div>
     </div>
+  </div>
+    </div>
+
+
     <div class="right">
       <h1 class="heading">{{ pub.about }}</h1>
       <p>
@@ -175,58 +202,43 @@
       ></i>
       <p class="ratingStatment">Rated 4.3 from 4 Ratings!</p>
       </p>
+
+      
+      <h3 class="heading">Directions</h3>
+<div style="position:relative; padding-bottom:56.25%; height:0;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.838521559027!2d-9.049622784195785!3d53.274512879964014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96e5f633156f%3A0xe997eacdc6802bef!2zQW4gUMO6Y8Ohbg!5e0!3m2!1sen!2sie!4v1678911688830!5m2!1sen!2sie" 
+style="border:0; position:absolute; top:0; left:0; width:100%; height:100%;" 
+allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
     </div>
+  </div>
+
+  <div style="padding: 100px;"></div>
+
+
+  
+
+  
+
+  <div>
+    
   </div>
 
   
 
-  <div class="comment-section">
-    <h2 class="question">Tell us what you think!</h2>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" />
-      <label for="comment">Comment:</label>
-      <textarea id="comment" name="comment"></textarea>
-      <button class="submit-comment" type="submit">Submit</button>
-    </form>
-    <div class="comments">
-      <div class="comment">
-        <div class="user">John Doe</div>
-        <div class="text">nice pub really enjoyed it</div>
-      </div>
-      <div class="comment">
-        <div class="user">Jane Smith</div>
-        <div class="text">They allow the right type of dogs in this pub</div>
-      </div>
-      <div class="comment">
-        <div class="user">Mike Johnson</div>
-        <div class="text">No</div>
-      </div>
-      <div class="comment">
-        <div class="user">Sarah Wilson</div>
-        <div class="text">
-          The staff is friendly and the drinks are delicious. Can't wait to come
-          back!
-        </div>
-      </div>
-      <div class="comment">
-        <div class="user">David Lee</div>
-        <div class="text">
-          I had a great time here with friends. The live music was fantastic.
-        </div>
-      </div>
-      <div class="comment">
-        <div class="user">Mary Chen</div>
-        <div class="text">
-          I'm so glad I found this place. The food is delicious and the
-          atmosphere is cozy.
-        </div>
-      </div>
-    </div>
-  </div>
+
+
+
+
+
+
+
+  
 </template>
 
 <script>
+
 import Pubs from "../data";
 export default {
   name: "AnPucan",
