@@ -1,8 +1,8 @@
-body{
-    background: url(../Images/backgroundPic.jpg);
+body {
+    background: url(../Images/5076091.jpg);
     background-repeat: no-repeat;
-    background-size: cover;   
-    height: 100vh;
+    background-size: contain;   
+    height: 100%; /* adjust as needed */
 }
 .wrapper{
     width:350px;

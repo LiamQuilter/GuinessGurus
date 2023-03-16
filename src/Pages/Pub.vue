@@ -13,6 +13,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+
   <div class="grid-container">
     <div class="left-column">
       <div class="image-container">
@@ -121,8 +123,7 @@
       <div class="comment-section">
     <h2 class="question">Tell us what you think!</h2>
     <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" />
+      
       <label for="comment">Comment:</label>
       <textarea id="comment" name="comment"></textarea>
       <button class="submit-comment" type="submit">Submit</button>
