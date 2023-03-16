@@ -25,7 +25,7 @@
 </div>
 
 <div class="row">
-INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh 
+INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Team Potential University of Galway
 </div>
 </div>
 </footer>
