@@ -41,7 +41,7 @@ overflow-x:hidden;
 }
 
 .footer{
-background:#ffffff;
+background:#000000;
 padding:30px 0px;
 font-family: 'Play', sans-serif;
 text-align:center;
@@ -62,7 +62,7 @@ transition:0.5s;
 }
 
 .footer .row a:hover{
-color:#020202;
+color:#ffffff;
 }
 
 .footer .row ul{
