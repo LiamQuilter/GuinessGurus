@@ -18,11 +18,9 @@
 
 <div class="row">
 <ul>
-<li><a href="#">Contact us</a></li>
-<li><a href="#">Our Services</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms & Conditions</a></li>
-<li><a href="#">Career</a></li>
+<li><router-link to = "/aboutUs">About Us</router-link></li>
+<li><router-link to = "/login">Log In</router-link></li>
+<li><router-link to = "/signup">Sign Up</router-link></li>
 </ul>
 </div>
 
