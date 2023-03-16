@@ -2,7 +2,7 @@ body{
     background: url(../Images/backgroundPic.jpg);
     background-repeat: no-repeat;
     background-size: cover;   
-    height: 100vh;
+    height: 100%;
 }
 .wrapper{
     width:350px;
