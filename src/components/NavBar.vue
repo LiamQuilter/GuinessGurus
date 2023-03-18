@@ -22,7 +22,7 @@
     class="navbar"
     role="navigation"
     aria-label="main navigation"
-    style= "background: linear-gradient(to top, #000000,#000000,#000000, #4c2e10, #8b572a, #b58d68, #f7f3e9,#f7f3e9)"
+    style= "background: linear-gradient(to top, #1c1201,#000000,#000000, #4c2e10, #8b572a, #b58d68, #f7f3e9,#f7f3e9)"
     
   >
     <div class="navbar-end">
@@ -100,7 +100,17 @@
   .navbar-start .buttons {
     margin-right: auto;
   }
+  .title {
+    display: block;
+    text-align: center;
+  }
+  .title span {
+    display: block;
+    font-size: 0.8em;
+    text-align: center;
+  }
 }
+
 
 .button.is-white:hover strong:before {
   content: "Sign Up";
@@ -118,12 +128,14 @@
   content: "Login";
   position: absolute;
   top: -20px;
-  left: 60px;
+  left: -20px;
   background-color: #000;
   color: #fff;
   padding: 5px;
   border-radius: 5px;
   font-size: 14px;
+
+  
 }
 
 .button.is-link:hover ~ .button.is-white:hover strong:before {
@@ -187,6 +199,7 @@
 }
 
 .button.is-link + .tooltip {
+  content: attr(data-tooltip);
   position: absolute;
   top: 100%;
   left: 50%;
@@ -196,9 +209,7 @@
   transition: visibility 0s, opacity 0.5s, transform 0.5s;
 }
 
-.button.is-white:hover + .tooltip:before {
-  content: "Click to sign up";
-}
+
 
 .button.is-white:hover + .tooltip {
   visibility: visible;

@@ -5,6 +5,7 @@ import SignUp from './Pages/SignUp.vue'
 import Pub from './Pages/Pub.vue'
 import About from './Pages/About.vue'
 
+
 const routes = [
     {
         path: '/',

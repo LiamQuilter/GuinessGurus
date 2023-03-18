@@ -25,7 +25,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+body{
+  background-image: url(../../Images/gettyimages-994055538-612x612.jpg);
+  background-repeat: no-repeat;
+    background-size: contain;   
+  
+    background-size: cover;
+    background-position: center;
+  
+    background-repeat: no-repeat;
+}
 
 .container {
   display: flex;
@@ -42,9 +53,7 @@ export default {
   max-width: 1200px;
   width: 100%;
   padding: 20px;
-  box-sizing: border-box;
-  border: 2px solid #6f6e6e;
-  border-radius: 10px;
+  
   padding: 20px;
   margin-top: 40px;
   margin-bottom: 40px;

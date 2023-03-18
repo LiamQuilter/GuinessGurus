@@ -121,33 +121,33 @@
       </div>
 
       <div class="comment-section">
-    <h2 class="question">Tell us what you think!</h2>
-    <form>
-      
-      <label for="comment">Comment:</label>
-      <textarea id="comment" name="comment"></textarea>
-      <button class="submit-comment" type="submit">Submit</button>
-    </form>
-    <div class="comments">
-      <div class="comment">
-        <div class="user">John Doe</div>
-        <div class="text">nice pub really enjoyed it</div>
-      </div>
-      <div class="comment">
-        <div class="user">Jane Smith</div>
-        <div class="text">They allow the right type of dogs in this pub</div>
-      </div>
-      <div class="comment">
-        <div class="user">Mike Johnson</div>
-        <div class="text">No</div>
-      </div>
+  <h2 class="question">Tell us what you think!</h2>
+  <form @submit.prevent="addComment">
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment"></textarea>
+    <button class="submit-comment" type="submit">Submit</button>
+  </form>
+  <div class="comments">
+    <div class="comment">
+      <div class="user" :style="{ color: getRandomColor() }"><i class="fa-solid fa-circle-user fa-xl"></i> John Doe</div>
+      <div class="text">nice pub really enjoyed it</div>
+    </div>
+    <div class="comment">
+      <div class="user" :style="{ color: getRandomColor() }"><i class="fa-solid fa-circle-user fa-xl"></i> Jane Smith</div>
+      <div class="text">They allow the right type of dogs in this pub</div>
+    </div>
+    <div class="comment">
+      <div class="user" :style="{ color: getRandomColor() }"><i class="fa-solid fa-circle-user fa-xl"></i> Mike Johnson</div>
+      <div class="text">No</div>
     </div>
   </div>
+</div>
+  
     </div>
 
 
     <div class="right">
-      <h1 class="heading">{{ pub.about }}</h1>
+      <h2 class="heading">{{ pub.about }}</h2>
       <p>
         {{ pub.AboutParagraph }}
       </p>
@@ -239,8 +239,8 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
 </template>
 
 <script>
-
 import Pubs from "../data";
+
 export default {
   name: "AnPucan",
 
@@ -261,6 +261,8 @@ export default {
       yourRated: false,
     };
   },
+
+  
 
   methods: {
     setRating(type, value) {
@@ -286,9 +288,46 @@ export default {
       // Set yourRated to true so the your rating label is displayed
       this.yourRated = true;
     },
+    addComment() {
+      const commentInput = document.getElementById('comment');
+      const commentText = commentInput.value.trim();
+      if (commentText !== '') {
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+        const userDiv = document.createElement('div');
+        userDiv.classList.add('user');
+        userDiv.style.color = this.getRandomColor();
+        userDiv.innerHTML = '<i class="fa-solid fa-circle-user fa-xl"></i> Anonymous';
+        newComment.appendChild(userDiv);
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('text');
+        textDiv.textContent = commentText;
+        newComment.appendChild(textDiv);
+        const comments = document.querySelector('.comments');
+        comments.appendChild(newComment);
+        commentInput.value = ''; // Clear the input field
+
+        const commentCount = comments.childElementCount;
+        if (commentCount > 20) {
+          const hiddenComments = commentCount - 4;
+          for (let i = 1; i <= hiddenComments; i++) {
+            comments.querySelector(`:nth-last-child(${i+4})`).style.display = 'none';
+          }
+        }
+      }
+    },
+    getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    },
   },
 };
 </script>
+
 
 <style lang="css">
 @import "..\Pub..css";
