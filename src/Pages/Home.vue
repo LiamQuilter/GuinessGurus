@@ -28,7 +28,7 @@ export default {
 <style scoped>
 
 body{
-  background-image: url(../../Images/gettyimages-994055538-612x612.jpg);
+  background-image: url(../../Images/wp9100300.jpg);
   background-repeat: no-repeat;
     background-size: contain;   
   

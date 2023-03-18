@@ -22,7 +22,7 @@
     class="navbar"
     role="navigation"
     aria-label="main navigation"
-    style= "background: linear-gradient(to top, #1c1201,#000000,#000000, #4c2e10, #8b572a, #b58d68, #f7f3e9,#f7f3e9)"
+    
     
   >
     <div class="navbar-end">
@@ -70,18 +70,51 @@
 
 <style scoped>
   .navbar {
-    opacity: 0; /* Set initial opacity to 0 */
-    animation: fadeInNav 1s ease-in-out forwards; /* Set animation properties */
+    
+  
+    animation: change-colors 100s ease forwards;
+  
+  
   }
   
-  @keyframes fadeInNav {
-    from {
-      opacity: 0; /* Start with opacity 0 */
-    }
-    to {
-      opacity: 1; /* End with opacity 1 */
-    }
+
+  @keyframes change-colors {
+  0% {
+    background: linear-gradient(to top, #000000, #000000, #2e1d0c, #5c3b1c, #8a5a2c, #b78a4c, #e4ba6c, #f7f3e9, #f7f3e9);
   }
+  10% {
+    background: linear-gradient(to top, #000000, #000000, #2e1d0c, #5c3b1c, #8a5a2c, #b78a4c, #e4ba6c, #f7f3e9, #f7f3e9);
+  }
+  20% {
+    background: linear-gradient(to top, #000000, #000000, #2e1d0c, #5c3b1c, #8a5a2c, #b78a4c, #e4ba6c, #f7f3e9, #f7f3e9);
+  }
+  30% {
+    background: linear-gradient(to top, #000000, #000000, #271a0b, #4e3317, #754d23, #9c664f, #c38f7b, #f7f3e9, #f7f3e9);
+  }
+  40% {
+    background: linear-gradient(to top, #000000, #000000, #1f1308, #3e2410, #5d3618, #7c4821, #9b5a2a, #f7f3e9, #f7f3e9);
+  }
+  50% {
+    background: linear-gradient(to top, #000000, #000000, #191107, #321d0f, #4b2917, #643520, #7d4228, #f7f3e9, #f7f3e9);
+  }
+  60% {
+    background: linear-gradient(to top, #000000, #000000, #130a04, #261308, #3d1e0c, #54270f, #6b3112, #f7f3e9, #f7f3e9);
+  }
+  70% {
+    background: linear-gradient(to top, #000000, #000000, #0d0602, #1f0e05, #251007, #34240a, #412d0d, #f7f3e9, #f7f3e9);
+  }
+  80% {
+    background: linear-gradient(to top, #000000, #000000, #080401, #110802, #1d0f03, #201003, #2c1605, #f7f3e9, #f7f3e9);
+  }
+  90% {
+    background: linear-gradient(to top, #000000, #000000, #040200, #080401, #0c0602, #100803, #140a04, #f7f3e9, #f7f3e9);
+  }
+  100% {
+    background: linear-gradient(to top, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #f7f3e9, #f7f3e9);
+  }
+}
+
+
 .navbar-start {
   display: flex;
   align-items: center;
@@ -95,6 +128,8 @@
 .navbar-start .buttons a:not(:last-child) {
   margin-right: 10px;
 }
+
+
 
 @media screen and (max-width: 1023px) {
   .navbar-start .buttons {
@@ -113,7 +148,7 @@
 
 
 .button.is-white:hover strong:before {
-  content: "Sign Up";
+  
   position: absolute;
   top: -20px;
   left: -40px;
@@ -125,10 +160,10 @@
 }
 
 .button.is-link:hover strong:before {
-  content: "Login";
+  
   position: absolute;
   top: -20px;
-  left: -20px;
+  left: 60px;
   background-color: #000;
   color: #fff;
   padding: 5px;
@@ -143,7 +178,7 @@
 }
 
 .button.is-link:hover ~ .button.is-white:hover strong:after {
-  content: " ";
+  
   position: absolute;
   top: 10px;
   left: 110px;
