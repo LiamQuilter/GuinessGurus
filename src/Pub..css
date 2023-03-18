@@ -304,6 +304,31 @@ p {
 .ratingStatment{
   font-family: 'Dancing Script', cursive;
 }
+.comment-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.comments {
+  max-height: 300px; /* set the maximum height */
+  overflow-y: auto; /* add a scrollbar */
+}
+
+.comment {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.comment .user {
+  font-weight: bold;
+}
+
+.comment .text {
+  margin-top: 5px;
+}
+
 @media only screen and (max-width: 768px) {
   body {
     font-size: 80%; /* Decrease font size for smaller screens */

@@ -36,6 +36,7 @@ INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Team Pot
 body{
 margin:0;
 overflow-x:hidden;
+
 }
 
 .footer{
@@ -76,6 +77,7 @@ margin:0px 30px;
 font-size:2em;
 margin:0% 1%;
 }
+
 
 @media (max-width:720px){
 .footer{

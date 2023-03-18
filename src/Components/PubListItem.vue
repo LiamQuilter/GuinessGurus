@@ -98,6 +98,7 @@ document.body.appendChild(script);
 .card-content {
   display: flex;
   justify-content: center;
+  opacity: 0.8; /* or any value between 0 and 1 */
 }
 
 .content-wrapper {
@@ -130,7 +131,7 @@ document.body.appendChild(script);
 .social-icon {
   display: inline-block;
   margin-right: 5px;
-  color: #555; /* Change this value to adjust the icon color */
+  color: #7a6d6d; /* Change this value to adjust the icon color */
   margin-left: 15px;
 }
 .social-icon:hover {
