@@ -98,7 +98,7 @@ document.body.appendChild(script);
 .card-content {
   display: flex;
   justify-content: center;
-  opacity: 0.8; /* or any value between 0 and 1 */
+  
 }
 
 .content-wrapper {
@@ -160,5 +160,7 @@ document.body.appendChild(script);
     transform: rotate(-30deg);
   }
 }
+
+
 
 </style>
