@@ -13,6 +13,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+
   <div class="grid-container">
     <div class="left-column">
       <div class="image-container">
@@ -118,6 +120,7 @@
       </div>
 
       <div class="comment-section">
+
     
       <h2 class="question">Tell us what you think!</h2>
       <form 
@@ -154,11 +157,13 @@
     </form> -->
     
   </div>
+</div>
+  
     </div>
 
 
     <div class="right">
-      <h1 class="heading">{{ pub.about }}</h1>
+      <h2 class="heading">{{ pub.about }}</h2>
       <p>
         {{ pub.AboutParagraph }}
       </p>
@@ -295,9 +300,7 @@ comments.value = comments.value.filter(comment =>comment.id !==id)
 </script> 
 
 <script>
-
 import Pubs from "../data";
-import { async } from "@firebase/util";
 export default {
   name: "AnPucan",
 
@@ -318,6 +321,8 @@ export default {
       yourRated: false,
     };
   },
+
+  
 
   methods: {
     setRating(type, value) {
@@ -343,9 +348,46 @@ export default {
       // Set yourRated to true so the your rating label is displayed
       this.yourRated = true;
     },
+    addComment() {
+      const commentInput = document.getElementById('comment');
+      const commentText = commentInput.value.trim();
+      if (commentText !== '') {
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+        const userDiv = document.createElement('div');
+        userDiv.classList.add('user');
+        userDiv.style.color = this.getRandomColor();
+        userDiv.innerHTML = '<i class="fa-solid fa-circle-user fa-xl"></i> Anonymous';
+        newComment.appendChild(userDiv);
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('text');
+        textDiv.textContent = commentText;
+        newComment.appendChild(textDiv);
+        const comments = document.querySelector('.comments');
+        comments.appendChild(newComment);
+        commentInput.value = ''; // Clear the input field
+
+        const commentCount = comments.childElementCount;
+        if (commentCount > 20) {
+          const hiddenComments = commentCount - 4;
+          for (let i = 1; i <= hiddenComments; i++) {
+            comments.querySelector(`:nth-last-child(${i+4})`).style.display = 'none';
+          }
+        }
+      }
+    },
+    getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    },
   },
 };
 </script> 
+
 
 <style lang="css">
 @import "..\Pub..css";

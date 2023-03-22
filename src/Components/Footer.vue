@@ -18,16 +18,14 @@
 
 <div class="row">
 <ul>
-<li><a href="#">Contact us</a></li>
-<li><a href="#">Our Services</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms & Conditions</a></li>
-<li><a href="#">Career</a></li>
+<li><router-link to = "/aboutUs">About Us</router-link></li>
+<li><router-link to = "/login">Log In</router-link></li>
+<li><router-link to = "/signup">Sign Up</router-link></li>
 </ul>
 </div>
 
 <div class="row">
-INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh 
+INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Team Potential University of Galway
 </div>
 </div>
 </footer>
@@ -38,10 +36,11 @@ INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh
 body{
 margin:0;
 overflow-x:hidden;
+
 }
 
 .footer{
-background:#ffffff;
+background:#000000;
 padding:30px 0px;
 font-family: 'Play', sans-serif;
 text-align:center;
@@ -62,7 +61,7 @@ transition:0.5s;
 }
 
 .footer .row a:hover{
-color:#020202;
+color:#ffffff;
 }
 
 .footer .row ul{
@@ -78,6 +77,7 @@ margin:0px 30px;
 font-size:2em;
 margin:0% 1%;
 }
+
 
 @media (max-width:720px){
 .footer{

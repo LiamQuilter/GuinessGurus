@@ -60,11 +60,6 @@
 
       <br />
     </div>
-
-   
-
-
-
   </div>
 </template>
 
@@ -89,6 +84,7 @@ document.body.appendChild(script);
 </script>
 
 <style>
+
 .card {
   width: 440px;
 }
@@ -99,10 +95,10 @@ document.body.appendChild(script);
   padding: 5px; /* Add some padding for spacing */
   border-radius: 10px; /* Add a border-radius for a softer look */
 }
-
 .card-content {
   display: flex;
   justify-content: center;
+  
 }
 
 .content-wrapper {
@@ -135,7 +131,7 @@ document.body.appendChild(script);
 .social-icon {
   display: inline-block;
   margin-right: 5px;
-  color: #555; /* Change this value to adjust the icon color */
+  color: #7a6d6d; /* Change this value to adjust the icon color */
   margin-left: 15px;
 }
 .social-icon:hover {
@@ -164,5 +160,7 @@ document.body.appendChild(script);
     transform: rotate(-30deg);
   }
 }
+
+
 
 </style>

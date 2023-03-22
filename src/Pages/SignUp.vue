@@ -2,7 +2,8 @@
     <head>
         <title>login</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Lao&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../../style.css">
     </head>
     <body>
      <div class="wrapper">
