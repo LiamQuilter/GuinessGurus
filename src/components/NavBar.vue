@@ -59,6 +59,17 @@
           >
             <i class="fa-regular fa-circle-user fa-xl"></i>
           </router-link>
+          
+          <router-link
+            id = "profile-link"
+            to = "/profile"
+            class="button is-link"
+            data-tooltip="Profile"
+            onmouseover="this.dispatchEvent(new Event('mouseenter'))"
+            onmouseout="this.dispatchEvent(new Event('mouseleave'))"
+            >
+            <i class="fa-regular fa-face-smile fa-xl"></i>
+          </router-link>
         </div>
       </div>
     </div>
