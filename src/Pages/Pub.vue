@@ -27,7 +27,6 @@
         <div class="rating">
           <div class="stars">
             <button
-              class="star"
               v-for="n in 5"
               :key="'taste' + n"
               :disabled="yourRated"
@@ -119,28 +118,41 @@
       </div>
 
       <div class="comment-section">
-    <h2 class="question">Tell us what you think!</h2>
-    <form>
+    
+      <h2 class="question">Tell us what you think!</h2>
+      <form 
+      @submit.prevent="addcomments"
+      >
+      <div class="control">
+        <input v-model="newCommentsContent" class="input" type="text" placeholder="Text input">
+      </div>
+      <div class="control">
+        <button :disabled="!newCommentsContent" class="button is-primary">Submit</button>
+      </div>
+    </form>
+
+      <div 
+      v-for = "comment in comments"
+      class="card"
+      >
+        <div class="card-content">
+          <div class="content">
+            {{ comment.content }}
+            <button 
+            @click="deleteComment(comment.id)">delete</button>
+
+          </div>
+        </div>
+      
+      </div>
+    <!-- <form>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" />
       <label for="comment">Comment:</label>
-      <textarea id="comment" name="comment"></textarea>
-      <button class="submit-comment" type="submit">Submit</button>
-    </form>
-    <div class="comments">
-      <div class="comment">
-        <div class="user">John Doe</div>
-        <div class="text">nice pub really enjoyed it</div>
-      </div>
-      <div class="comment">
-        <div class="user">Jane Smith</div>
-        <div class="text">They allow the right type of dogs in this pub</div>
-      </div>
-      <div class="comment">
-        <div class="user">Mike Johnson</div>
-        <div class="text">No</div>
-      </div>
-    </div>
+      <textarea v-model="newComment" id="comment" ref="newCommentref" name="comment"></textarea>
+      <button @click="addComment" :disable="!newComment" class="submit-comment" type="submit">Submit</button> 
+    </form> -->
+    
   </div>
     </div>
 
@@ -214,6 +226,7 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
     </div>
   </div>
 
+
   <div style="padding: 100px;"></div>
 
 
@@ -237,9 +250,54 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
   
 </template>
 
+<script setup>
+
+import {ref, onMounted} from "vue"
+ import { collection, getDocs } from "firebase/firestore";
+ import {db} from "@/fb/firebase"
+
+const comments = ref([
+   {
+     id: "id1",
+      content:"hshshshs"
+  },
+   {
+    id: "id2",
+     content:"sdefsdvb"
+    },
+])
+
+ onMounted(async() =>{
+   const querySnapshot = await getDocs(collection(db, "Pubs"))
+    querySnapshot.forEach((doc) => {
+    console.log(doc.id, " => ", doc.data())
+ })
+ })
+
+const newCommentsContent = ref("")
+
+const addcomments = () => {
+
+const newComment ={
+  id: "id1",
+  content: newCommentsContent.value
+}
+comments.value.unshift(newComment)
+newCommentsContent.value = ""
+}
+
+const deleteComment = id => {
+
+comments.value = comments.value.filter(comment =>comment.id !==id)
+
+}
+
+</script> 
+
 <script>
 
 import Pubs from "../data";
+import { async } from "@firebase/util";
 export default {
   name: "AnPucan",
 
@@ -287,7 +345,7 @@ export default {
     },
   },
 };
-</script>
+</script> 
 
 <style lang="css">
 @import "..\Pub..css";
