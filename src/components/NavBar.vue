@@ -72,7 +72,7 @@
   .navbar {
     
   
-    animation: change-colors 100s ease forwards;
+    animation: change-colors 50s ease forwards;
   
   
   }
@@ -101,10 +101,10 @@
     background: linear-gradient(to top, #000000, #000000, #130a04, #261308, #3d1e0c, #54270f, #6b3112, #f7f3e9, #f7f3e9);
   }
   70% {
-    background: linear-gradient(to top, #000000, #000000, #0d0602, #1f0e05, #251007, #34240a, #412d0d, #f7f3e9, #f7f3e9);
+    background: linear-gradient(to top, #000000, #000000, #0d0602, #1a0c04, #271107, #34240a, #412d0d, #f7f3e9, #f7f3e9);
   }
   80% {
-    background: linear-gradient(to top, #000000, #000000, #080401, #110802, #1d0f03, #201003, #2c1605, #f7f3e9, #f7f3e9);
+    background: linear-gradient(to top, #000000, #000000, #080401, #110802, #1a0d03, #231204, #2c1605, #f7f3e9, #f7f3e9);
   }
   90% {
     background: linear-gradient(to top, #000000, #000000, #040200, #080401, #0c0602, #100803, #140a04, #f7f3e9, #f7f3e9);
@@ -113,7 +113,6 @@
     background: linear-gradient(to top, #000000, #000000, #000000, #000000, #000000, #000000, #000000, #f7f3e9, #f7f3e9);
   }
 }
-
 
 .navbar-start {
   display: flex;
@@ -138,6 +137,7 @@
   .title {
     display: block;
     text-align: center;
+    justify-content: center;
   }
   .title span {
     display: block;

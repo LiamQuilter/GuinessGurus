@@ -1,6 +1,8 @@
 <template>
   <body>
+  
   <div class="container">
+    
     <div class="pub-list">
       <PubListItem v-for="(pub, index) in Pubs" :key="index" :pub="pub" />
     </div>
@@ -37,6 +39,8 @@ body{
   
     background-repeat: no-repeat;
 }
+
+
 
 .container {
   display: flex;

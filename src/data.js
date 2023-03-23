@@ -12,10 +12,9 @@ const Pubs = [
     AboutParagraph:
       "An Púcán is a traditional Irish pub located in the heart of Galway City, just a stone's throw from Eyre Square. It's a favorite spot for locals and tourists alike, with a lively atmosphere, great music, and a wide range of drinks and food. Whether you're looking for a quiet pint, a night out with friends, or some live music, An Púcán is the place to be.",
     PucanOverallRating: "4.5",
+    Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.838521559027!2d-9.049622784195785!3d53.274512879964014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96e5f633156f%3A0xe997eacdc6802bef!2zQW4gUMO6Y8Ohbg!5e0!3m2!1sen!2sie!4v1678911688830!5m2!1sen!2sie",
 
-  
   },
-
   {
     id: 2,
     imageSrc: "../Images/Seven-Bridge-Street.jpg",
@@ -29,6 +28,7 @@ const Pubs = [
     AboutParagraph:
       "Seven Bar and Restaurant is a lively spot in the heart of Galway City. Offering delicious food, craft beers and cocktails, Seven is the perfect place to relax with friends or enjoy a night out. Our menu features a range of dishes made with locally-sourced ingredients, and we have live music every weekend. Come join us!",
     PucanOverallRating: "4.2",
+    Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.9897324112617!2d-9.059561067579374!3d53.27180361587668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fae8a13acb%3A0xfb1ea805bdbbc781!2sSeven%20Bridgestreet!5e0!3m2!1sen!2sie!4v1679498427522!5m2!1sen!2sie",
   },
   
   {
@@ -44,6 +44,7 @@ const Pubs = [
     AboutParagraph:
     "Taylor's Bar and Beer Garden is a popular spot in Galway City, known for its great atmosphere and selection of drinks. With indoor and outdoor seating options, it's the perfect spot for a casual drink or a night out with friends. In addition to a wide range of beers and cocktails, Taylor's also serves delicious pub food.",
     PucanOverallRating: "4.2",
+    Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2386.0815378246707!2d-9.060535984196031!3d53.27015867996321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b974e5cf5a917%3A0xe51a65a9c990ac23!2sTaylor&#39;s%20Bar%20%26%20Beer%20Garden!5e0!3m2!1sen!2sie!4v1679499522992!5m2!1sen!2sie" ,
     },
     {
     id: 4,
@@ -58,6 +59,7 @@ const Pubs = [
     AboutParagraph:
     "Busker Brownes is a popular pub and restaurant located in the heart of Galway City. With a lively atmosphere, great food, and a wide range of drinks, it's a favorite spot for locals and tourists alike. The menu at Busker Brownes features a mix of classic Irish dishes and modern cuisine, and the pub also hosts live music and events throughout the week.",
     PucanOverallRating: "4.4",
+    Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2386.0815378246707!2d-9.060535984196031!3d53.27015867996321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b974e5cf5a917%3A0xe51a65a9c990ac23!2sTaylor&#39;s%20Bar%20%26%20Beer%20Garden!5e0!3m2!1sen!2sie!4v1679499522992!5m2!1sen!2sie",
     },
     {
     id: 5,
@@ -72,6 +74,7 @@ const Pubs = [
     AboutParagraph:
     "The Front Door is a popular pub and restaurant located in the heart of Galway City. With a lively atmosphere, great food, and a wide range of drinks, it's a favorite spot for locals and tourists alike. The menu at The Front Door features a mix of classic Irish dishes and modern cuisine, and the pub also hosts live music and events throughout the week.",
     PucanOverallRating: "4.3",
+    Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.9988093614547!2d-9.056235784195978!3d53.27164097996349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fad985a2fd%3A0x17fe4b6348d2b20c!2sThe%20Front%20Door%20Pub!5e0!3m2!1sen!2sie!4v1679499622722!5m2!1sen!2sie", 
     },
     {
       id: 6,
@@ -86,6 +89,7 @@ const Pubs = [
       AboutParagraph:
         "McGettigan's is an Irish pub and restaurant located in the heart of Galway City. We offer a wide selection of drinks and food, and we're known for our lively atmosphere and live music events. Whether you're looking for a pint, a bite to eat, or some entertainment, McGettigan's is the place to be.",
       PucanOverallRating: "4.5",
+      Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.785146773677!2d-9.051442384195765!3d53.27546917996417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96ef7183530f%3A0x6458aceb9ab2b23d!2sMcGettigan&#39;s%20Galway!5e0!3m2!1sen!2sie!4v1679499684260!5m2!1sen!2sie",
     },
     {
       id: 7,
@@ -99,7 +103,8 @@ const Pubs = [
       about: "About Taaffes",
       aboutParagraph:
         "Taaffes is a lively and traditional Irish pub located in the heart of Galway's Latin Quarter. It's a popular spot for both locals and tourists, with live music every night and a cozy atmosphere. Taaffes is also known for its wide selection of Irish whiskies and beers.",
-      overallRating: "4.3"
+      overallRating: "4.3",
+      Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.9593114404524!2d-9.05536018419589!3d53.2723486799636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96e535781aa3%3A0x4d06d9fe3e283e18!2sTaaffes%20Bar!5e0!3m2!1sen!2sie!4v1679499766791!5m2!1sen!2sie",
     },
     {
       id: 8,
@@ -113,8 +118,10 @@ const Pubs = [
       about: "About Tig Cóilí",
       aboutParagraph:
         "Tig Cóilí is a family-run traditional Irish pub in Galway City, known for its cozy atmosphere, live music, and friendly staff. The pub has a wide selection of beers, whiskeys, and other spirits, and serves delicious homemade food. Tig Cóilí is also a popular spot for sports fans, with multiple TVs showing live games.",
-      overallRating: "4.4"
+      overallRating: "4.4",
+      Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.9598974656824!2d-9.05578908419586!3d53.27233817996355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fac5a4634d%3A0xc988c438bd20355a!2zVGlnaCBDaMOzaWzDrQ!5e0!3m2!1sen!2sie!4v1679500257885!5m2!1sen!2sie",
     },
+
     {
       id: 9,
       imageSrc: "../Images/Kings-Head.jpg",
@@ -127,7 +134,9 @@ const Pubs = [
       about: "About The Kings Head",
       aboutParagraph:
         "The Kings Head is a historic pub and restaurant located in the heart of Galway's Latin Quarter. The building dates back to the 1600s and has a rich history as a meeting place for merchants, politicians, and artists. Today, The Kings Head is known for its traditional Irish music, live entertainment, and delicious food and drink. The pub also has a cozy beer garden and multiple private event spaces.",
-      overallRating: "4.5"
+      overallRating: "4.5",
+      Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.9725723345578!2d-9.055354484195911!3d53.272111079963516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fad0606f57%3A0x291c057593063f2b!2sThe%20Kings%20Head%20Bistro!5e0!3m2!1sen!2sie!4v1679500349453!5m2!1sen!2sie",
+
     },
     {
       id: 10,
@@ -142,8 +151,8 @@ const Pubs = [
       AboutParagraph:
         "Cookes Thatch Bar is one of Galway’s oldest pubs. We are located in the West end of Galway City a 5 minute walk from the centre of the City. Cookes has been welcoming customers through its doors for hundreds of years.",
       PucanOverallRating: "4.5",
+      Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.9544613809717!2d-9.064868784195891!3d53.27243557996364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96f9dd25cc9d%3A0xc94934a1f42fe485!2sCookes%20Thatch%20Bar!5e0!3m2!1sen!2sie!4v1679500390274!5m2!1sen!2sie",
     
-      
     },
     
     {
@@ -160,6 +169,7 @@ const Pubs = [
       AboutParagraph:
         "Freeneys is a traditional Irish pub located in the heart of Galway City. With a cozy atmosphere and friendly staff, Freeneys is the perfect place to enjoy a pint of Guinness or a whiskey. We also have live music every weekend, so come join us for a night out!",
       PucanOverallRating: "4.0",
+     Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.98254030286!2d-9.055602284195864!3d53.27193247996347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fad1cbf4fb%3A0x581a908a6bde9244!2sFreeney&#39;s%20Bar!5e0!3m2!1sen!2sie!4v1679572753797!5m2!1sen!2sie",
     },
     {
       id: 12,
@@ -174,6 +184,7 @@ const Pubs = [
       AboutParagraph:
         "Sliding Rock is a popular spot in Galway City for food, drinks and live music. Our menu features a range of dishes made with fresh, locally-sourced ingredients, and we have a great selection of craft beers and cocktails. With live music every weekend, Sliding Rock is the perfect place to relax with friends or enjoy a night out.",
       PucanOverallRating: "4.4",
+      Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.7726946079874!2d-9.065367584195782!3d53.27569227996424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96f721ff6a83%3A0xf541d39839b4273f!2sThe%20Sliding%20Rock!5e0!3m2!1sen!2sie!4v1679572802576!5m2!1sen!2sie",
     }
 ];
 
