@@ -91,7 +91,7 @@ document.body.appendChild(script);
 .content {
   background-color: #f2f2f2; /* Change the background color to a lighter shade */
   border: none; /* Remove the border */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Add a box shadow for depth */
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6); /* Add a box shadow for depth */
   padding: 5px; /* Add some padding for spacing */
   border-radius: 10px; /* Add a border-radius for a softer look */
 }
