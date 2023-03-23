@@ -52,7 +52,7 @@
           <router-link
             id="login-link"
             to="/login"
-            class="button is-link"
+            class="button is-white"
             data-tooltip="Login"
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"
             onmouseout="this.dispatchEvent(new Event('mouseleave'))"
@@ -63,12 +63,12 @@
           <router-link
             id = "profile-link"
             to = "/profile"
-            class="button is-link"
+            class="button is-white"
             data-tooltip="Profile"
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"
             onmouseout="this.dispatchEvent(new Event('mouseleave'))"
             >
-            <i class="fa-regular fa-face-smile fa-xl"></i>
+            <i class="fa-solid fa-beer-mug-empty fa-lg"></i>
           </router-link>
         </div>
       </div>
@@ -76,19 +76,10 @@
   </nav>
 </template>
 
-
-
-
 <style scoped>
   .navbar {
-    
-  
     animation: change-colors 50s ease forwards;
-  
-  
   }
-  
-
   @keyframes change-colors {
   0% {
     background: linear-gradient(to top, #000000, #000000, #2e1d0c, #5c3b1c, #8a5a2c, #b78a4c, #e4ba6c, #f7f3e9, #f7f3e9);
@@ -170,97 +161,11 @@
   font-size: 14px;
 }
 
-.button.is-link:hover strong:before {
-  
-  position: absolute;
-  top: -20px;
-  left: 60px;
-  background-color: #000;
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 14px;
-
-  
-}
-
-.button.is-link:hover ~ .button.is-white:hover strong:before {
-  left: -80px;
-}
-
-.button.is-link:hover ~ .button.is-white:hover strong:after {
-  
-  position: absolute;
-  top: 10px;
-  left: 110px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid #000;
-  border-bottom: 10px solid transparent;
-}
-
-.button.is-link:hover ~ .button.is-white:hover strong:before,
-.button.is-white:hover ~ .button.is-link:hover strong:before {
-  opacity: 1;
-}
-
-.button:hover + .tooltip {
-  display: block;
-  left: -80px;
-}
-
-.tooltip {
-  position: absolute;
-  display: none;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 5px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 5px;
-  white-space: nowrap;
-}
 
 .button:hover {
   transform: translateX(-10px);
-}
-
-.button.is-link + .tooltip:before {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.button.is-link:hover + .tooltip {
-  visibility: visible;
   opacity: 1;
-  transform: translateX(-50%);
-}
-
-.button.is-link + .tooltip {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s, transform 0.5s;
-}
-
-
-
-.button.is-white:hover + .tooltip {
-  visibility: visible;
-  opacity: 1;
-  transform: translateX(-50%);
+ 
 }
 
 .title {
@@ -279,11 +184,11 @@
 .buttons {
   display: flex;
   justify-content: space-between;
+  opacity: 0.5; /* set opacity to 50% */
 }
 
 .button.is-Home {
   margin-right: 10px;
 }
-
 
 </style>

@@ -153,6 +153,11 @@ body > .grid-container {
   padding: 30px;
 }
 
+.CommentContent{
+  width:200px;
+}
+
+
 
 
 .question {
@@ -218,46 +223,6 @@ body > .grid-container {
   background-color: #0069d9;
 }
 
-.comment {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #b5b0b0;
-}
-
-.comment:last-child {
-  border-bottom: none;
-}
-
-.comment .comment-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.comment .comment-header h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.comment .comment-header span {
-  font-size: 16px;
-  color: #b5b0b0;
-}
-
-.comment .comment-body {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.comment .comment-body p:first-child {
-  margin-top: 0;
-}
-
-.comment .comment-body p:last-child {
-  margin-bottom: 0;
-}
-
 .comment .comment-footer {
   display: flex;
   justify-content: flex-end;
@@ -286,6 +251,20 @@ body > .grid-container {
   font-family: "Dancing Script", cursive;
   margin: 10px;
 }
+.comment-section {
+  max-width: 50px;
+  margin: 0 auto;
+}
+
+.comment-container {
+  height: 300px;
+  overflow-y: scroll;
+  max-width: 350px;
+}
+
+.card {
+  margin-bottom: 10px;
+}
 
 p {
   font-size: 16px;
@@ -313,21 +292,6 @@ p {
   max-height: 300px; /* set the maximum height */
   overflow-y: auto; /* add a scrollbar */
 
-}
-
-.comment {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-}
-
-.comment .user {
-  font-weight: bold;
-}
-
-.comment .text {
-  margin-top: 5px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -361,7 +325,7 @@ p {
   .comment-section textarea {
     font-size: 16px; /* Decrease font size for smaller screens */
   }
-  
+
   /* Hide the navigation menu on smaller screens */
   .nav {
     display: none;
@@ -403,7 +367,6 @@ p {
     display: flex;
     flex-direction: column;
   }
-
 
 }
 

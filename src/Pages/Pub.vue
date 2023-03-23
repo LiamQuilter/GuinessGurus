@@ -29,13 +29,14 @@
         <div class="rating">
           <div class="stars">
             <button
+              class="star"
               v-for="n in 5"
-              :key="'taste' + n"
+              :key="'price' + n"
               :disabled="yourRated"
-              @click="setRating('taste', n)"
-              :class="{ 'star-selected': n <= tasteRating }"
-              @mouseover="setHoverRating('taste', n)"
-              @mouseleave="clearHoverRating('taste')"
+              @click="setRating('price', n)"
+              :class="{ 'star-selected': n <= priceRating }"
+              @mouseover="setHoverRating('price', n)"
+              @mouseleave="clearHoverRating('price')"
             >
               <span class="f">✰</span>
             </button>
@@ -64,6 +65,7 @@
           <div class="rating-label">{{ priceRating }}/5 stars</div>
         </div>
       </div>
+    
 
       <div class="rating-section">
         <h2>Shtick</h2>
@@ -120,33 +122,27 @@
       </div>
 
       <div class="comment-section">
+  <h2 class="question">Tell us what you think!</h2>
+  <form @submit.prevent="addcomments">
+    <div class="control">
+      <input v-model="newCommentsContent" class="input" type="text" placeholder="write your comment here!  ">
+    </div>
+    <div class="control">
+      <button :disabled="!newCommentsContent" class="button is-primary">Submit</button>
+    </div>
+  </form>
 
-    
-      <h2 class="question">Tell us what you think!</h2>
-      <form 
-      @submit.prevent="addcomments"
-      >
-      <div class="control">
-        <input v-model="newCommentsContent" class="input" type="text" placeholder="Text input">
-      </div>
-      <div class="control">
-        <button :disabled="!newCommentsContent" class="button is-primary">Submit</button>
-      </div>
-    </form>
-
-      <div 
-      v-for = "comment in comments"
-      class="card"
-      >
-        <div class="card-content">
-          <div class="content">
-            {{ comment.content }}
-            <button 
-            @click="deleteComment(comment.id)">delete</button>
-
-          </div>
+  <div class="comment-container">
+    <div v-for="comment in comments" class="card">
+      <div class="card-content">
+        <div class="CommentContent">
+          {{ comment.content }}
+          <button class="comment-submit" @click="deleteComment(comment.id)"><i class="fa-solid fa-trash"></i></button>
         </div>
-      
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     <!-- <form>
       <label for="name">Name:</label>
@@ -156,10 +152,9 @@
       <button @click="addComment" :disable="!newComment" class="submit-comment" type="submit">Submit</button> 
     </form> -->
     
-  </div>
-</div>
   
-    </div>
+  
+   
 
 
     <div class="right">
@@ -229,6 +224,7 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
 </div>
 
     </div>
+  </div>
   
 
 
@@ -250,11 +246,11 @@ import {ref, onMounted} from "vue"
 const comments = ref([
    {
      id: "id1",
-      content:"hshshshs"
+      content:"Really nice pub. Very nice guinness but bit pricy"
   },
    {
     id: "id2",
-     content:"sdefsdvb"
+     content:"Wont be back here again! Way too expensive!"
     },
 ])
 

@@ -169,7 +169,7 @@ const Pubs = [
       AboutParagraph:
         "Freeneys is a traditional Irish pub located in the heart of Galway City. With a cozy atmosphere and friendly staff, Freeneys is the perfect place to enjoy a pint of Guinness or a whiskey. We also have live music every weekend, so come join us for a night out!",
       PucanOverallRating: "4.0",
-     Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.98254030286!2d-9.055602284195864!3d53.27193247996347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fad1cbf4fb%3A0x581a908a6bde9244!2sFreeney&#39;s%20Bar!5e0!3m2!1sen!2sie!4v1679572753797!5m2!1sen!2sie",
+     Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d596.4963645504039!2d-9.053896970741555!3d53.27188019874772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fad045a42d%3A0x5b99215bdf9e16a1!2sFreeneys%20Sports!5e0!3m2!1sen!2sie!4v1679579087433!5m2!1sen!2sie",
     },
     {
       id: 12,
@@ -187,5 +187,6 @@ const Pubs = [
       Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.7726946079874!2d-9.065367584195782!3d53.27569227996424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96f721ff6a83%3A0xf541d39839b4273f!2sThe%20Sliding%20Rock!5e0!3m2!1sen!2sie!4v1679572802576!5m2!1sen!2sie",
     }
 ];
+
 
 export default Pubs;
