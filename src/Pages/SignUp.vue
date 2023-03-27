@@ -26,7 +26,7 @@
                      <input type="password" placeholder="Password" name="">
                  </span><br>
                      <button>Sign Up</button>
-                     <router-link to="/login" class="has-text-grey-light">Already have an account?</router-link>
+                     <router-link class ="has-text-grey-light" to="/login">Already have an account?</router-link>
             </form>
         </div>
          </div>
