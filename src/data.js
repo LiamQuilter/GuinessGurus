@@ -44,7 +44,7 @@ const Pubs = [
     AboutParagraph:
     "Taylor's Bar and Beer Garden is a popular spot in Galway City, known for its great atmosphere and selection of drinks. With indoor and outdoor seating options, it's the perfect spot for a casual drink or a night out with friends. In addition to a wide range of beers and cocktails, Taylor's also serves delicious pub food.",
     PucanOverallRating: "4.2",
-    Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2386.0815378246707!2d-9.060535984196031!3d53.27015867996321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b974e5cf5a917%3A0xe51a65a9c990ac23!2sTaylor&#39;s%20Bar%20%26%20Beer%20Garden!5e0!3m2!1sen!2sie!4v1679499522992!5m2!1sen!2sie" ,
+    Maps: "https://www.google.com/maps/embed/v1/place?q=Taylor's%20Bar%20%26%20Beer%20Garden%2C%20Dominick%20Street%20Upper%2C%20Galway%2C%20Ireland&key=AIzaSyA-hNCB0RItgBptKS0YqhpD6py9xJVNGm4",
     },
     {
     id: 4,
@@ -59,7 +59,7 @@ const Pubs = [
     AboutParagraph:
     "Busker Brownes is a popular pub and restaurant located in the heart of Galway City. With a lively atmosphere, great food, and a wide range of drinks, it's a favorite spot for locals and tourists alike. The menu at Busker Brownes features a mix of classic Irish dishes and modern cuisine, and the pub also hosts live music and events throughout the week.",
     PucanOverallRating: "4.4",
-    Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2386.0815378246707!2d-9.060535984196031!3d53.27015867996321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b974e5cf5a917%3A0xe51a65a9c990ac23!2sTaylor&#39;s%20Bar%20%26%20Beer%20Garden!5e0!3m2!1sen!2sie!4v1679499522992!5m2!1sen!2sie",
+    Maps: "https://www.google.com/maps/embed/v1/place?q=busker%20browns%20galway&key=AIzaSyA-hNCB0RItgBptKS0YqhpD6py9xJVNGm4",
     },
     {
     id: 5,
@@ -78,8 +78,8 @@ const Pubs = [
     },
     {
       id: 6,
-      imageSrc: "../Images/McGettigans.jpg",
-      title: "McGettigan's",
+      imageSrc: "../Images/mc gett.jpg",
+      title: "McGettigan's",  
       address: "9-11 Prospect Hill, Eyre Square, Galway City, Ireland",
       instagramLink: "https://www.instagram.com/mcggalway/",
       websiteLink: "https://www.mcgettigans.com/galway-ireland.html",
@@ -89,8 +89,8 @@ const Pubs = [
       AboutParagraph:
         "McGettigan's is an Irish pub and restaurant located in the heart of Galway City. We offer a wide selection of drinks and food, and we're known for our lively atmosphere and live music events. Whether you're looking for a pint, a bite to eat, or some entertainment, McGettigan's is the place to be.",
       PucanOverallRating: "4.5",
-      Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.785146773677!2d-9.051442384195765!3d53.27546917996417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96ef7183530f%3A0x6458aceb9ab2b23d!2sMcGettigan&#39;s%20Galway!5e0!3m2!1sen!2sie!4v1679499684260!5m2!1sen!2sie",
-    },
+      Maps: "https://www.google.com/maps/embed/v1/place?q=mc%20gettigans%20Galway&key=AIzaSyA-hNCB0RItgBptKS0YqhpD6py9xJVNGm4",
+    }, 
     {
       id: 7,
       imageSrc: "../Images/Taaffes.jpg",
@@ -108,7 +108,7 @@ const Pubs = [
     },
     {
       id: 8,
-      imageSrc: "../Images/Tig-Coili.jpg",
+      imageSrc: "../Images/tigh coli.jpg",
       title: "Tig Cóilí",
       address: "Tig Cóilí, Mainguard Street, Galway City, Ireland",
       instagramLink: "https://www.instagram.com/tigchoili/",
