@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Noto+Serif+Lao&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+
   </head>
 
   <nav 
@@ -28,7 +29,7 @@
     <div class="navbar-end">
       <a>
         <router-link to="/">
-          <h2 class="title">&nbsp;&nbsp;&nbsp;&nbsp; Guinness Gurus</h2>
+          <h2 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Guinness Gurus</h2>
         </router-link>
       </a>
     </div>
@@ -75,6 +76,8 @@
     </div>
   </nav>
 </template>
+
+
 
 <style scoped>
   .navbar {
@@ -179,7 +182,20 @@
     display: inline-block; /* Ensures that the border wraps around the text */
     padding-left: 20px; /* Adds some padding to the left of the text */
     padding-right: 20px; /* Adds some padding to the right of the text */
+    animation-name: changeColor;
+  animation-duration: 1s;
+  animation-delay: 43s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes changeColor {
+  from {
+    color: #fefdfc;
   }
+  to {
+    color: gold;
+  }
+}
 
 .buttons {
   display: flex;

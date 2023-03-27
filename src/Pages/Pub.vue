@@ -31,12 +31,12 @@
             <button
               class="star"
               v-for="n in 5"
-              :key="'price' + n"
+              :key="'taste' + n"
               :disabled="yourRated"
-              @click="setRating('price', n)"
-              :class="{ 'star-selected': n <= priceRating }"
-              @mouseover="setHoverRating('price', n)"
-              @mouseleave="clearHoverRating('price')"
+              @click="setRating('taste', n)"
+              :class="{ 'star-selected': n <= tasteRating }"
+              @mouseover="setHoverRating('taste', n)"
+              @mouseleave="clearHoverRating('taste')"
             >
               <span class="f">✰</span>
             </button>
@@ -244,14 +244,14 @@ import {ref, onMounted} from "vue"
  import {db} from "@/fb/firebase"
 
 const comments = ref([
-   {
-     id: "id1",
-      content:"Really nice pub. Very nice guinness but bit pricy"
-  },
-   {
-    id: "id2",
-     content:"Wont be back here again! Way too expensive!"
-    },
+  //  {
+  //    id: "id1",
+  //     content:"Really nice pub. Very nice guinness but bit pricy"
+  // },
+  //  {
+  //   id: "id2",
+  //    content:"Wont be back here again! Way too expensive!"
+  //   },
 ])
 
  onMounted(async() =>{
