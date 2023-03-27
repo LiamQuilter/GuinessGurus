@@ -1,12 +1,49 @@
+<script>
+    export default{
+        data(){
+            return{
+                firstName: 'First',
+                lastName: 'last',
+                userName: 'Username',
+                
+                newFirstName: '',
+                newLastName: '',
+                newUserName: ''
+            };
+        },
+        methods: {
+            applyProfileChanges(){
+                if(this.newFirstName.trim().length != 0){
+                    this.firstName = this.newFirstName;
+                }else if(this.newFirstName.trim().length == 0){
+                    this.firstName = this.firstName
+                }
+                if(this.newLastName.trim().length != 0){
+                this.lastName = this.newLastName;
+                }else if(this.newLastName.trim().length == 0){
+                    this.lastName = this.lastName;
+                }
+                if(this.newUserName.trim().length != 0){
+                this.userName = this.newUserName;
+                }else if(this.newUserName.trim().length == 0){
+                    this.userName = this.userName;
+                }
+            }
+        }
+    }
+
+
+
+</script>
 <template>
     <div class="tile is-ancestor">
         <div class="tile is-parent is-4">
             <article class="tile is-child box is-primary">
                 <p class="title">Details</p>
                 <p class="subtitle fa-regular fa-circle-user fa-2xl"></p>
-                <p class="subtitle"><br>First Name:<br></p>
-                <p class="subtitle"><br>Last Name:<br></p>
-                <p class="subtitle"><br>Favourite Bar:<br> </p>
+                <p class="subtitle"><br><Strong>First Name: </Strong>{{ firstName }}<br></p>
+                <p class="subtitle"><br><Strong>Last Name: </Strong>{{ lastName }}<br></p>
+                <p class="subtitle"><br><Strong>Username: </Strong>{{ userName }}<br> </p>
     
            </article>
         </div>
@@ -15,15 +52,17 @@
                 <div class="tile is-parent is-vertical">
                     <article class="tile is-child box is-info">
                         <p class="title">Update Profile</p>
-                        <label class="label">First Name:</label>
-                        <input class="input is-success" type="text" placeholder="First Name">
+
+                        <label class="label">First Name: </label>
+                        <input v-model ="newFirstName" class="input is-success" type="text" placeholder="First Name">
                     
-                        <label class="label">Last Name:</label>
-                        <input class="input is-success" type="text" placeholder="Last Name">
+                        <label class="label">Last Name: </label>
+                        <input v-model ="newLastName" class="input is-success" type="text" placeholder="Last Name">
     
-                        <label class="label">Username:</label>
-                        <input class="input is-success" type="text" placeholder="Username">
+                        <label class="label">Username: </label>
+                        <input v-model = "newUserName" class="input is-success" type="text" placeholder="Username">
                         <br><br>
+
                         <label class="label"><strong>Upload New Profile Picture:</strong></label>
                         <div class="file has-name has-right">
                             <label class="file-label">
@@ -42,7 +81,7 @@
                             </label>
                         </div>
                         <br><br>
-                        <button class="button is-success is-responsive">Apply Profile Changes</button>
+                        <button @click="applyProfileChanges" class="button is-success is-responsive">Apply Profile Changes</button>
                     </article>
                     <article class="tile is-child box has-icons-right has-icons-left">
                         <p class="title">Change Password</p>
@@ -78,4 +117,5 @@
             </div>
         </div>
     </div>  
+    
 </template>
