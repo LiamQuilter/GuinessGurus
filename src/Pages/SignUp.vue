@@ -17,16 +17,16 @@
                     <input type="text" placeholder="Full name" name="">
                 </span><br>
                 
-                <span>
-                    <i class="fa fa-user"></i>
-                    <input type="text" placeholder="Username" name="">
-                </span><br>
-                <span>
+                 <span>
+                     <i class="fa fa-user"></i>
+                     <input type="text" placeholder="Username" name="">
+                 </span><br>
+                 <span>
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Password" name="">
-                </span><br>
-                <button>Sign Up</button>
-                <router-link to = "/login" class="has-text-grey-light">Already have an account?</router-link>
+                     <input type="password" placeholder="Password" name="">
+                 </span><br>
+                     <button>Sign Up</button>
+                     <router-link to="/login" class="has-text-grey-light">Already have an account?</router-link>
             </form>
         </div>
          </div>
