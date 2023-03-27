@@ -34,16 +34,27 @@
       </a>
     </div>
 
+
+
     
 
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
+
+          <router-link
+            to="/Map"
+            class="button is-white"
+            onmouseover="this.dispatchEvent(new Event('mouseenter'))"
+            onmouseout="this.dispatchEvent(new Event('mouseleave'))"
+          >
+            <strong><i class="fa-solid fa-map-location-dot"></i></strong>
+          </router-link>
+
           <router-link
             to="/signup"
             class="button is-white"
-            data-tooltip="Sign Up"
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"
             onmouseout="this.dispatchEvent(new Event('mouseleave'))"
           >
