@@ -26,10 +26,13 @@
                     <br>
                     <router-link class ="has-text-grey-light" to="/signup">Don't have an account?</router-link>
             </form>
-            <br>
-            <button @click="storeAuth.logoutuser">logout</button>
+
+            <a class ="has-text-white" type="submit" style="font-size: larger; text-decoration: underline;" @click="storeAuth.logoutuser">Sign Out</a>
         </div>
-    </div>
+         </div>
+
+         
+
      
     
     </body>
