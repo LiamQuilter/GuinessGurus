@@ -4,7 +4,8 @@ import Login from './Pages/Login.vue'
 import SignUp from './Pages/SignUp.vue'
 import Pub from './Pages/Pub.vue'
 import About from './Pages/About.vue'
-
+import Profile from './Pages/Profile.vue'
+import Map from './Pages/Map.vue'
 
 const routes = [
     {
@@ -26,6 +27,14 @@ const routes = [
     {
         path: '/aboutUs',
         component: About
+    },
+    {
+        path: '/profile',
+        component: Profile
+    },
+    {
+        path: '/Map',
+        component: Map
     }
 ]
 

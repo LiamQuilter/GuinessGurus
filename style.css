@@ -63,13 +63,14 @@ form ::placeholder {
   }
 form button {
 	padding-left: 0;
-	background-color: #337af4;
+    background: linear-gradient(to bottom, #04b4ff, #8f00ff);
+    color: white;
 	letter-spacing: 1px;
 	font-weight: bold;
     border-radius: 15px;
 }
 form button:hover {
 	box-shadow: 2px 2px 5px #555;
-	background-color: #b511f6;
+    background: linear-gradient(to bottom, #5fc5ff, #5c007a);
     color:white;
 }
