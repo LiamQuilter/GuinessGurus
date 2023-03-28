@@ -122,37 +122,35 @@
       </div>
 
       <div class="comment-section">
-  <h2 class="question">Tell us what you think!</h2>
-  <form @submit.prevent="addcomments">
-    <div class="control">
-      <input v-model="newCommentsContent" class="input" type="text" placeholder="write your comment here!  ">
+       <h2 class="question">Tell us what you think!</h2>
+         <form @submit.prevent="addcomments">
+    <div class="form-control">
+      <input v-model="newCommentsContent" class="input" type="text" placeholder="Write your comment here!">
     </div>
-    <div class="control">
+    <div class="form-control">
       <button :disabled="!newCommentsContent" class="button is-primary">Submit</button>
     </div>
-  </form>
+          </form>
 
   <div class="comment-container">
     <div v-for="comment in comments" class="card">
-      <div class="card-content">
-        <div class="CommentContent">
+      <div class="card-content" style="padding: 10px;">
+        <div class="comment-content">
           {{ comment.content }}
           <button class="comment-submit" @click="deleteComment(comment.id)"><i class="fa-solid fa-trash"></i></button>
         </div>
       </div>
     </div>
   </div>
+
+
 </div>
       </div>
-    <!-- <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" />
-      <label for="comment">Comment:</label>
-      <textarea v-model="newComment" id="comment" ref="newCommentref" name="comment"></textarea>
-      <button @click="addComment" :disable="!newComment" class="submit-comment" type="submit">Submit</button> 
-    </form> -->
+    
     
   
+
+
 
 
 
