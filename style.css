@@ -68,9 +68,11 @@ form button {
 	letter-spacing: 1px;
 	font-weight: bold;
     border-radius: 15px;
+    opacity: 0.5;
 }
 form button:hover {
 	box-shadow: 2px 2px 5px #555;
-    background: linear-gradient(to bottom, #5fc5ff, #5c007a);
+    background: linear-gradient(to bottom, #04b4ff, #8f00ff);
     color:white;
+    opacity: 1;
 }
