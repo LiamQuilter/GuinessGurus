@@ -29,7 +29,7 @@
     <div class="navbar-end">
       <a>
         <router-link to="/">
-          <h2 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Guinness Gurus</h2>
+          <h2 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pint Pals</h2>
         </router-link>
       </a>
     </div>
