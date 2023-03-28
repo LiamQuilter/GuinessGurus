@@ -52,7 +52,7 @@
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"
             onmouseout="this.dispatchEvent(new Event('mouseleave'))"
           >
-            <strong><i class="fa-solid fa-user-plus fa-l"></i></strong>
+            <strong><i class="fa-solid fa-compass fa-xl"></i></strong>
           </router-link>
 
 
@@ -62,7 +62,7 @@
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"
             onmouseout="this.dispatchEvent(new Event('mouseleave'))"
           >
-            <strong><i class="fa-solid fa-map-location-dot"></i></strong>
+            <strong><i class="fa-solid fa-map-location-dot fa-lg"></i></strong>
           </router-link>
 
 
