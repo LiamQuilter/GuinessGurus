@@ -1,6 +1,13 @@
+import {ref, onMounted} from "vue"
+ import { collection, getDocs } from "firebase/firestore";
+ import {db} from "@/fb/firebase"
+
 const Pubs = [
-  {
+   {
     id: 1,
+
+
+
     imageSrc: "../Images/An-Pucan.jpg",
     title: "An Púcán",
     address: "11 Forster Street, Galway City, Ireland ",
@@ -15,6 +22,7 @@ const Pubs = [
     Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.838521559027!2d-9.049622784195785!3d53.274512879964014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96e5f633156f%3A0xe997eacdc6802bef!2zQW4gUMO6Y8Ohbg!5e0!3m2!1sen!2sie!4v1678911688830!5m2!1sen!2sie",
 
   },
+  
   {
     id: 2,
     imageSrc: "../Images/Seven-Bridge-Street.jpg",
@@ -187,6 +195,30 @@ const Pubs = [
       Maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.7726946079874!2d-9.065367584195782!3d53.27569227996424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96f721ff6a83%3A0xf541d39839b4273f!2sThe%20Sliding%20Rock!5e0!3m2!1sen!2sie!4v1679572802576!5m2!1sen!2sie",
     }
 ];
+
+
+// onMounted(async() =>{
+//   const querySnapshot = await getDocs(collection(db, "pubs"))
+//   let fbinfo = []
+//    querySnapshot.forEach((doc) => {
+//    console.log(doc.id, " => ", doc.data())
+
+//    const Pubs = {
+//      id: doc.id,
+//      imageSrc: doc.data.imageSrc,
+//    title: doc.data.title,
+//    address: doc.data.address,
+//    instagramLink: doc.data.instagramLink,
+//    websiteLink: doc.data.websiteLink,
+//    phoneNumber: doc.data.phoneNumber,
+//    email: doc.data.email,
+//    about: doc.data.about,
+//    AboutParagraph: doc.data.AboutParagraph,
+//    PucanOverallRating: doc.data.PucanOverallRating,
+//    }
+//  fbinfo.push(Pubs)
+// })
+// })
 
 
 export default Pubs;

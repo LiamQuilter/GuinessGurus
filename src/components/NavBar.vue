@@ -71,6 +71,7 @@
           >
             <i class="fa-regular fa-circle-user fa-xl"></i>
           </router-link>
+
           
           <router-link
             id = "profile-link"
@@ -83,10 +84,12 @@
             <i class="fa-solid fa-beer-mug-empty fa-lg"></i>
           </router-link>
         </div>
+    
       </div>
     </div>
   </nav>
 </template>
+
 
 
 
