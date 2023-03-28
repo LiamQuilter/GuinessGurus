@@ -42,7 +42,7 @@
         <div class="buttons">
 
           <router-link
-            to="/Map"
+            to="/Mapapi"
             class="button is-white"
             data-tooltip="Sign Up"
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"

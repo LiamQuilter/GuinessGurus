@@ -4,7 +4,7 @@ import Login from './Pages/Login.vue'
 import SignUp from './Pages/SignUp.vue'
 import Pub from './Pages/Pub.vue'
 import About from './Pages/About.vue'
-import Map from './Pages/Map.vue'
+import Map from './Pages/Mapapi.vue'
 
 const routes = [
     {
@@ -28,8 +28,8 @@ const routes = [
         component: About
     },
     {
-        path: '/Map',
-        component: Map
+        path: '/Mapapi',
+        component: Mapapi
     },
 ]
 
