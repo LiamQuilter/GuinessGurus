@@ -23,7 +23,7 @@
         <img class="images" :src="pub.imageSrc" />
         <hr class="line-after-image" />
       </div>
-      <strong class="PubName">{{ pub.title }}</strong>
+      <strong class="PubName">{{ info.title }}</strong>
 
       <div class="rating-section">
         <h2>Taste</h2>
@@ -66,6 +66,7 @@
           <div class="rating-label">{{ priceRating }}/5 stars</div>
         </div>
       </div>
+    
 
       <div class="rating-section">
         <h2>Shtick</h2>
@@ -122,35 +123,42 @@
       </div>
 
       <div class="comment-section">
-  <h2 class="question">Tell us what you think!</h2>
-  <form @submit.prevent="addComment">
-    <label for="comment">Comment:</label>
-    <textarea id="comment" name="comment"></textarea>
-    <button class="submit-comment" type="submit">Submit</button>
-  </form>
-  <div class="comments">
-    <div class="comment">
-      <div class="user" :style="{ color: getRandomColor() }"><i class="fa-solid fa-circle-user fa-xl"></i> John Doe</div>
-      <div class="text">nice pub really enjoyed it</div>
+       <h2 class="question">Tell us what you think!</h2>
+         <form @submit.prevent="addcomments">
+    <div class="form-control">
+      <input v-model="newCommentsContent" class="input" type="text" placeholder="Write your comment here!">
     </div>
-    <div class="comment">
-      <div class="user" :style="{ color: getRandomColor() }"><i class="fa-solid fa-circle-user fa-xl"></i> Jane Smith</div>
-      <div class="text">They allow the right type of dogs in this pub</div>
+    <div class="form-control">
+      <button :disabled="!newCommentsContent" class="button is-primary">Submit</button>
     </div>
-    <div class="comment">
-      <div class="user" :style="{ color: getRandomColor() }"><i class="fa-solid fa-circle-user fa-xl"></i> Mike Johnson</div>
-      <div class="text">No</div>
+          </form>
+
+  <div class="comment-container">
+    <div v-for="comment in comments" class="card">
+      <div class="card-content" style="padding: 10px;">
+        <div class="comment-content">
+          {{ comment.content }}
+          <button class="comment-submit" @click="deleteComment(comment.id)"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
     </div>
   </div>
+
+
 </div>
+      </div>
+    
+    
   
-    </div>
+
+
+
 
 
     <div class="right">
-      <h2 class="heading">{{ pub.about }}</h2>
+      <h2 class="heading">{{ info.about }}</h2>
       <p>
-        {{ pub.AboutParagraph }}
+         {{info.aboutparagraph }}
       </p>
 
       <h2 class="heading">Address</h2>
@@ -159,36 +167,36 @@
           class="fa-solid fa-location-dot fa-flip"
           style="--fa-animation-duration: 3s; color: crimson;"
         ></i>
-        {{ pub.address }}
+        {{ info.address }}
       </P>
 
       <h3 class="heading">Links</h3>
       <P class="links">
       <p>
-        <a :href="pub.WebsiteLink"  style="color:blue">
+        <a :href="info.WebsiteLink"  style="color:blue">
           <i class="fa-solid fa-globe"></i>
           Website</a
         >
       </p>
 
       <p>
-        <a :href="pub.websiteLink"  style="color:forestgreen;"
+        <a :href="info.websiteLink"  style="color:forestgreen;"
           ><i class="fa-solid fa-envelope"></i> Email now!</a
         >
       </p>
 
       <p>
-        <i class="fa-sharp fa-solid fa-phone-volume" style="color:black;"></i> {{ pub.phoneNumber }}
+        <i class="fa-sharp fa-solid fa-phone-volume" style="color:black;"></i> {{ info.phoneNumber }}
       </p>
 
       <p>
-        <a :href="pub.instagramLink" class="insta">
+        <a :href="info.instagramLink" class="insta">
           <i class="fa-brands fa-instagram pulse"></i> Instagram
         </a>
       </p>
     </p>
 
-      <h4 class="heading">{{ pub.title }} overall rating</h4>
+      <h4 class="heading">{{ info.title }} overall rating</h4>
       <p class="whiteBorderStar">
       <i
         class="fa-solid fa-star fa-lg fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;color: gold; margin-right: 5px"
@@ -207,24 +215,98 @@
 
       
       <h3 class="heading">Directions</h3>
-      <div style="position:relative; padding-bottom:56.25%; height:0;">
-    <div id="map" style="position:absolute; top:0; left:0; width:100%; height:100%;"></div>
-  </div>
 
-  <div style="padding: 100px;"></div>
+<div style="position:relative; padding-bottom:56.25%; height:0;">
+   <iframe :src= "pub.Maps"
+style="border:0; position:absolute; top:0; left:0; width:100%; height:100%;" 
+allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+</div>
+
     </div>
   </div>
 
-  
 
-  
 
+  <div style="padding: 100px;"></div>
+ 
+
+  <div>
+    
+
+  </div>
   
 </template>
 
+
+<script setup>
+
+import {ref, onMounted} from "vue"
+ import { collection, getDocs } from "firebase/firestore";
+ import {db} from "@/fb/firebase"
+
+const comments = ref([
+  //  {
+  //    id: "id1",
+  //     content:"Really nice pub. Very nice guinness but bit pricy"
+  // },
+  //  {
+  //   id: "id2",
+  //    content:"Wont be back here again! Way too expensive!"
+  //   },
+])
+
+const info = ref([""
+
+  
+])
+
+ onMounted(async() =>{
+   const querySnapshot = await getDocs(collection(db, "pubs"))
+   let fbinfo = []
+    querySnapshot.forEach((doc) => {
+    console.log(doc.id, " => ", doc.data())
+
+    const Pubs = {
+      id: doc.id,
+      imageSrc: doc.data().imageSrc,
+    title: doc.data().title,
+    address: doc.data().address,
+    instagramLink: doc.data().instagramLink,
+    websiteLink: doc.data().websiteLink,
+    phoneNumber: doc.data().phoneNumber,
+    email: doc.data().email,
+    about: doc.data().about,
+    aboutparagraph: doc.data().aboutparagraph,
+    PucanOverallRating: doc.data().PucanOverallRating,
+    }
+  fbinfo.push(Pubs)
+ })
+  info.value=fbinfo
+ })
+
+const newCommentsContent = ref("")
+
+const addcomments = () => {
+
+const newComment ={
+  id: "id1",
+  content: newCommentsContent.value
+}
+comments.value.unshift(newComment)
+newCommentsContent.value = ""
+}
+
+const deleteComment = id => {
+
+comments.value = comments.value.filter(comment =>comment.id !==id)
+
+}
+
+</script> 
+
 <script>
 import Pubs from "../data";
-//import Map from "../src/Map.js";
+
 export default {
   name: "AnPucan",
 
@@ -310,7 +392,7 @@ export default {
     },
   },
 };
-</script>
+</script> 
 
 
 <style lang="css">
