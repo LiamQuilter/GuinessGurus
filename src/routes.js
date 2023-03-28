@@ -37,7 +37,7 @@ const routes = [
         path: '/Mapapi',
         component: Mapapi
     },
-
+{
         path: '/profile',
         component: Profile
     },

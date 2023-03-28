@@ -56,7 +56,7 @@
           </router-link>
 
 
-
+<router-link
             to="/Map"
             class="button is-white"
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"
