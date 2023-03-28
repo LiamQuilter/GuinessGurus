@@ -40,10 +40,23 @@
 
 
     <div class="navbar-end">
+
       <div class="navbar-item">
         <div class="buttons">
 
           <router-link
+
+            to="/Mapapi"
+            class="button is-white"
+            data-tooltip="Sign Up"
+            onmouseover="this.dispatchEvent(new Event('mouseenter'))"
+            onmouseout="this.dispatchEvent(new Event('mouseleave'))"
+          >
+            <strong><i class="fa-solid fa-user-plus fa-l"></i></strong>
+          </router-link>
+
+
+
             to="/Map"
             class="button is-white"
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"
@@ -51,6 +64,7 @@
           >
             <strong><i class="fa-solid fa-map-location-dot"></i></strong>
           </router-link>
+
 
           <router-link
             to="/signup"
