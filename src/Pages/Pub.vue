@@ -5,7 +5,8 @@
     href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
     rel="stylesheet"
   />
-
+  <link href="../Map.js"
+  >
   <link
     href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&family=Tilt+Prism&display=swap"
     rel="stylesheet"
@@ -214,6 +215,7 @@
 
       
       <h3 class="heading">Directions</h3>
+
 <div style="position:relative; padding-bottom:56.25%; height:0;">
    <iframe :src= "pub.Maps"
 style="border:0; position:absolute; top:0; left:0; width:100%; height:100%;" 
@@ -230,9 +232,11 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
 
   <div>
     
+
   </div>
   
 </template>
+
 
 <script setup>
 
@@ -252,6 +256,7 @@ const comments = ref([
 ])
 
 const info = ref([""
+
   
 ])
 
@@ -301,6 +306,7 @@ comments.value = comments.value.filter(comment =>comment.id !==id)
 
 <script>
 import Pubs from "../data";
+
 export default {
   name: "AnPucan",
 
