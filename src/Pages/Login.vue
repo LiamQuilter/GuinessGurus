@@ -20,7 +20,8 @@
                     <i class="fa-solid fa-lock"></i>
                      <input type="password" placeholder="Password" name="">
                  </span><br>
-                     <button type="submit" id="login-btn">Login</button>
+                     <button type="submit" id="login-btn">Log in</button>
+                     <router-link class ="has-text-grey-light" to="/signup">Don't have an account?</router-link>
             </form>
         </div>
          </div>
