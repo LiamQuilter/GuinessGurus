@@ -23,13 +23,11 @@
                      <input v-model="credentials.password" type="password" placeholder="Password" name="">
                  </span><br>
                      <button @click="storeAuth.loginuser" type="submit" id="login-btn">Login</button>
+                     <router-link class ="has-text-grey-light" to="/signup">Don't have an account?</router-link>
             </form>
-
-            <button
-            @click="storeAuth.logoutuser">
-            logout</button>
+            <button @click="storeAuth.logoutuser">logout</button>
         </div>
-         </div>
+    </div>
      
     
     </body>
