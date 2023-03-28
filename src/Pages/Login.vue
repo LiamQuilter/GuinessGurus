@@ -25,11 +25,11 @@
                      <button @click="storeAuth.loginuser" type="submit" id="login-btn">Login</button>
             </form>
 
-            <button
-            @click="storeAuth.logoutuser">
-            logout</button>
+            <a class ="has-text-white" type="submit" style="font-size: larger; text-decoration: underline;" @click="storeAuth.logoutuser">Sign Out</a>
         </div>
          </div>
+
+         
      
     
     </body>
