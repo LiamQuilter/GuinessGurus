@@ -59,11 +59,15 @@
           >
             <i class="fa-regular fa-circle-user fa-xl"></i>
           </router-link>
+
+          
         </div>
+    
       </div>
     </div>
   </nav>
 </template>
+
 
 
 

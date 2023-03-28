@@ -1,20 +1,24 @@
+import {ref, onMounted} from "vue"
+ import { collection, getDocs } from "firebase/firestore";
+ import {db} from "@/fb/firebase"
+
 const Pubs = [
-  {
+   {
     id: 1,
-    imageSrc: "../Images/An-Pucan.jpg",
-    title: "An Púcán",
-    address: "11 Forster Street, Galway City, Ireland ",
-    instagramLink: "https://www.instagram.com/anpucan/",
-    websiteLink: "https://anpucan.ie/ ",
-    phoneNumber: " +353 91 376 561",
-    email: "info@anpucan.ie",
-    about: "About An Púcán",
-    AboutParagraph:
-      "An Púcán is a traditional Irish pub located in the heart of Galway City, just a stone's throw from Eyre Square. It's a favorite spot for locals and tourists alike, with a lively atmosphere, great music, and a wide range of drinks and food. Whether you're looking for a quiet pint, a night out with friends, or some live music, An Púcán is the place to be.",
-    PucanOverallRating: "4.5",
+     imageSrc: "../Images/An-Pucan.jpg",
+     title: "An Púcán",
+     address: "11 Forster Street, Galway City, Ireland ",
+     instagramLink: "https://www.instagram.com/anpucan/",
+     websiteLink: "https://anpucan.ie/ ",
+     phoneNumber: " +353 91 376 561",
+     email: "info@anpucan.ie",
+     about: "About An Púcán",
+     AboutParagraph:
+       "An Púcán is a traditional Irish pub located in the heart of Galway City, just a stone's throw from Eyre Square. It's a favorite spot for locals and tourists alike, with a lively atmosphere, great music, and a wide range of drinks and food. Whether you're looking for a quiet pint, a night out with friends, or some live music, An Púcán is the place to be.",
+     PucanOverallRating: "4.5",
 
   
-  },
+   },
 
   {
     id: 2,
@@ -176,5 +180,28 @@ const Pubs = [
       PucanOverallRating: "4.4",
     }
 ];
+
+// onMounted(async() =>{
+//   const querySnapshot = await getDocs(collection(db, "pubs"))
+//   let fbinfo = []
+//    querySnapshot.forEach((doc) => {
+//    console.log(doc.id, " => ", doc.data())
+
+//    const Pubs = {
+//      id: doc.id,
+//      imageSrc: doc.data.imageSrc,
+//    title: doc.data.title,
+//    address: doc.data.address,
+//    instagramLink: doc.data.instagramLink,
+//    websiteLink: doc.data.websiteLink,
+//    phoneNumber: doc.data.phoneNumber,
+//    email: doc.data.email,
+//    about: doc.data.about,
+//    AboutParagraph: doc.data.AboutParagraph,
+//    PucanOverallRating: doc.data.PucanOverallRating,
+//    }
+//  fbinfo.push(Pubs)
+// })
+// })
 
 export default Pubs;
