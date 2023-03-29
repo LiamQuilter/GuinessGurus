@@ -1,17 +1,95 @@
-<!-- <template>
-    <div>
-      <div id="map" style="height: 500px;"></div>
-      <pre id="request"></pre>
-      <pre id="response"></pre>
-    </div>
-  </template>
+<template>
+  <GoogleMap
+    api-key="AIzaSyA6elK6y7iSn2wZu5kvEsU-1fgqMJt_86o"
+    style="width: 100%; height: 500px"
+    :center="currPos"
+    :zoom="15"
+  >
+    <MarkerCluster>
+      <Marker v-for="(location, i) in locations" :options="{ position: location }" :key="i" />
+    </MarkerCluster>
+  </GoogleMap>
+</template>
 
 <script>
-</script> -->
+import { defineComponent } from 'vue'
+import { GoogleMap, Marker, MarkerCluster } from 'vue3-google-map'
+import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
+import { useGeolocation } from '../useGeolocation'
+
+export default defineComponent({
+  name: 'App',
+  components: { GoogleMap, Marker, MarkerCluster },
+  
+  setup() {
+    //const center = { lat: 53.278195, lng: -9.060110 }
+
+    const { coords } = useGeolocation()
+    const currPos = computed(() => ({
+      lat: coords.value.latitude,
+      lng: coords.value.longitude
+    }))
+    const otherPos = ref(null)
+    //const loader = new Loader({ apiKey: GOOGLE_MAPS_API_KEY })
+    const mapDiv = ref(null)
+    let map = ref(null)
+    let clickListener = null
+    let line = null
+
+    onMounted(async () => {
+      await loader.load()
+      map.value = new google.maps.Map(mapDiv.value, {
+        center: currPos.value,
+        zoom: 7
+      })
+      clickListener = map.value.addListener(
+        'click',
+        ({ latLng: { lat, lng } }) => {
+          (otherPos.value = { lat: lat(), lng: lng() });
+          console.log("hello");
+          console.log(lat(), lng());
+        }
+      )
+    })
+    onUnmounted(async () => {
+      if (clickListener) clickListener.remove()
+    })
+
+    watch([map, currPos, otherPos], () => {
+      if (line) line.setMap(null)
+      if (map.value && otherPos.value != null) {
+        line = new google.maps.Polyline({
+          path: [currPos.value, otherPos.value],
+          map: map.value
+        })
+      }
+      else {
+        line = null // Remove the line
+      }
+    })
+    const locations = [
+      {lat: 53.274527, lng: -9.047445 },
+      {lat:53.271781,  lng:-9.054982},
+      {lat: 53.270159, lng: -9.058355},
+      {lat: 53.271646, lng: -9.054319},//buskers
+      {lat: 53.271662, lng: -9.054104},//front door
+      {lat: 53.275362, lng: -9.049395},//mcgettigans
+      {lat: 53.272363, lng: -9.053126},
+      {lat: 53.272360, lng: -9.053549 },
+      {lat: 53.272135, lng: -9.053305},
+      {lat: 53.272485, lng: -9.062739},
+      {lat: 53.271815, lng: -9.053436},
+      {lat: 53.275685, lng: -9.063187}
+    
+    ]
+    return { locations, currPos, mapDiv }
+  },
+})
+</script>
 
 
 
-<script>
+<!-- <script>
 /* eslint-disable no-undef */
 import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
 import { useGeolocation } from '../useGeolocation'
@@ -49,25 +127,25 @@ export default {
 
 
       //------------------------------
-        var origin1 = new google.maps.LatLng(55.930385, -3.118425);
-        var origin2 = 'Greenwich, England';
-        var destinationA = '11 Forster St, Galway, H91 P65D';
-        var destinationB = new google.maps.LatLng(50.087692, 14.421150);
+//         var origin1 = new google.maps.LatLng(55.930385, -3.118425);
+//         var origin2 = 'Greenwich, England';
+//         var destinationA = '11 Forster St, Galway, H91 P65D';
+//         var destinationB = new google.maps.LatLng(50.087692, 14.421150);
 
-        var service = new google.maps.DistanceMatrixService();
-        service.getDistanceMatrix(
-        {
-            origins: [origin1, origin2],
-            destinations: [destinationA, destinationB],
-            travelMode: 'WALKING'
-            }, callback);
+//         var service = new google.maps.DistanceMatrixService();
+//         service.getDistanceMatrix(
+//         {
+//             origins: [origin1, origin2],
+//             destinations: [destinationA, destinationB],
+//             travelMode: 'WALKING'
+//             }, callback);
 
-function callback(response, status) {
-  // See Parsing the Results for
-  // the basics of a callback function.
-  console.log("result from api call");
-  console.log(response);
-}
+// function callback(response, status) {
+//   // See Parsing the Results for
+//   // the basics of a callback function.
+//   console.log("result from api call");
+//   console.log(response);
+// }
 
       //----------------------------------
     })
@@ -109,32 +187,7 @@ function callback(response, status) {
         : haversineDistance(currPos.value, otherPos.value)
     )
 
-    //make a call to the distance matrix api
-    //-------------------------------------------------------------
-//     var origin1 = new google.maps.LatLng(55.930385, -3.118425);
-// var origin2 = 'Greenwich, England';
-// var destinationA = 'Stockholm, Sweden';
-// var destinationB = new google.maps.LatLng(50.087692, 14.421150);
 
-// var service = new google.maps.DistanceMatrixService();
-// service.getDistanceMatrix(
-//   {
-//     origins: [origin1, origin2],
-//     destinations: [destinationA, destinationB],
-//     travelMode: 'DRIVING',
-//     transitOptions: TransitOptions,
-//     drivingOptions: DrivingOptions,
-//     unitSystem: UnitSystem,
-//     avoidHighways: Boolean,
-//     avoidTolls: Boolean,
-//   }, callback);
-
-// function callback(response, status) {
-//   // See Parsing the Results for
-//   // the basics of a callback function.
-//   console.log("result from api call");
-
-// }
 
 
 
@@ -145,9 +198,7 @@ function callback(response, status) {
 }
 
 
-// src="https://polyfill.io/v3/polyfill.min.js?features=default">
-//         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-//       defer
+
 </script>
 
 <template>
@@ -171,4 +222,4 @@ function callback(response, status) {
       </div>
     </div>
     <div ref="mapDiv" style="width: 100%; height: 80vh" />
-  </template>
+  </template> -->
