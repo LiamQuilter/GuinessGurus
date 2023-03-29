@@ -5,9 +5,6 @@ import {ref, onMounted} from "vue"
 const Pubs = [
    {
     id: 1,
-
-
-
     imageSrc: "../Images/An-Pucan.jpg",
     title: "An Púcán",
     address: "11 Forster Street, Galway City, Ireland ",

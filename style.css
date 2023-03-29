@@ -2,7 +2,7 @@ body {
     background: url(../Images/5076091.jpg);
     background-repeat: no-repeat;
     background-size: contain;   
-    height: 100%; /* adjust as needed */
+    height: 100%; 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
