@@ -62,4 +62,20 @@
 
 </template>
 
+<script setup>
+
+import {onMounted} from "vue"
+import { usestoreAuth } from "@/stores/storeauth"
+import { usestoreUser } from "@/stores/storeuser"
+
+const storeAuth = usestoreAuth()
+const storeUser = usestoreUser()
+
+onMounted(() =>{
+  storeAuth.init()
+  storeUser.getuser()
+})
+
+</script>
+
 

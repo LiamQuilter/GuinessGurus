@@ -21,7 +21,7 @@
                 
                  <span>
                      <i class="fa fa-user"></i>
-                     <input type="text" placeholder="Username" name="">
+                     <input v-model="credentials.username" type="text" placeholder="Username" name="">
                  </span><br>
                  <span>
                     <i class="fa-solid fa-lock"></i>
@@ -49,7 +49,8 @@
 
     const credentials = reactive({
         email: "",
-        password:""
+        password:"",
+        //username:""
 
     })
 
@@ -60,6 +61,7 @@
         }
         else{
             storeAuth.registeruser(credentials)
+            
         }
     }
 

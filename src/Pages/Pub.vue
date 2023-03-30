@@ -23,7 +23,7 @@
         <img class="images" :src="pub.imageSrc" />
         <hr class="line-after-image" />
       </div>
-      <strong class="PubName">{{ info.title }}</strong>
+      <strong class="PubName">{{ storePubs.Pubs.title }}</strong>
 
       <div class="rating-section">
         <h2>Taste</h2>
@@ -147,18 +147,11 @@
 
 </div>
       </div>
-    
-    
-  
-
-
-
-
 
     <div class="right">
-      <h2 class="heading">{{ info.about }}</h2>
+      <h2 class="heading">{{ storePubs.Pubs.about }}</h2>
       <p>
-         {{info.aboutparagraph }}
+         {{storePubs.Pubs.aboutparagraph }}
       </p>
 
       <h2 class="heading">Address</h2>
@@ -167,36 +160,36 @@
           class="fa-solid fa-location-dot fa-flip"
           style="--fa-animation-duration: 3s; color: crimson;"
         ></i>
-        {{ info.address }}
+        {{ storePubs.Pubs.address }}
       </P>
 
       <h3 class="heading">Links</h3>
       <P class="links">
       <p>
-        <a :href="info.WebsiteLink"  style="color:blue">
-          <i class="fa-solid fa-globe"></i>
-          Website</a
-        >
+        <a :href="pub.websiteLink"  style="color:blue">
+          <i class="fa-solid fa-globe"></i>website
+          </a>
+        
       </p>
 
       <p>
-        <a :href="info.websiteLink"  style="color:forestgreen;"
+        <a :href="storePubs.Pubs.websiteLink"  style="color:forestgreen;"
           ><i class="fa-solid fa-envelope"></i> Email now!</a
         >
       </p>
 
       <p>
-        <i class="fa-sharp fa-solid fa-phone-volume" style="color:black;"></i> {{ info.phoneNumber }}
+        <i class="fa-sharp fa-solid fa-phone-volume" style="color:black;"></i> {{ storePubs.Pubs.phoneNumber }}
       </p>
 
       <p>
-        <a :href="info.instagramLink" class="insta">
+        <a :href="pub.instagramLink" class="insta">
           <i class="fa-brands fa-instagram pulse"></i> Instagram
         </a>
       </p>
     </p>
 
-      <h4 class="heading">{{ info.title }} overall rating</h4>
+      <h4 class="heading">{{ storePubs.Pubs.title }} overall rating</h4>
       <p class="whiteBorderStar">
       <i
         class="fa-solid fa-star fa-lg fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;color: gold; margin-right: 5px"
@@ -241,48 +234,25 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
 <script setup>
 
 import {ref, onMounted} from "vue"
- import { collection, getDocs } from "firebase/firestore";
+import{ useRoute} from "vue-router"
+ import { collection, getDocs, query, where } from "firebase/firestore";
  import {db} from "@/fb/firebase"
+ import { usestoreAuth } from "@/stores/storeauth"
+ import { usestorepubs} from "@/stores/storePubs"
+ 
+
+
+const storeAuth = usestoreAuth()
+const storePubs = usestorepubs()
+const route = useRoute()
 
 const comments = ref([
-  //  {
-  //    id: "id1",
-  //     content:"Really nice pub. Very nice guinness but bit pricy"
-  // },
-  //  {
-  //   id: "id2",
-  //    content:"Wont be back here again! Way too expensive!"
-  //   },
-])
+
 
 const info = ref([""
 
   
 ])
-
- onMounted(async() =>{
-   const querySnapshot = await getDocs(collection(db, "pubs"))
-   let fbinfo = []
-    querySnapshot.forEach((doc) => {
-    console.log(doc.id, " => ", doc.data())
-
-    const Pubs = {
-      id: doc.id,
-      imageSrc: doc.data().imageSrc,
-    title: doc.data().title,
-    address: doc.data().address,
-    instagramLink: doc.data().instagramLink,
-    websiteLink: doc.data().websiteLink,
-    phoneNumber: doc.data().phoneNumber,
-    email: doc.data().email,
-    about: doc.data().about,
-    aboutparagraph: doc.data().aboutparagraph,
-    PucanOverallRating: doc.data().PucanOverallRating,
-    }
-  fbinfo.push(Pubs)
- })
-  info.value=fbinfo
- })
 
 const newCommentsContent = ref("")
 
@@ -302,12 +272,24 @@ comments.value = comments.value.filter(comment =>comment.id !==id)
 
 }
 
+
+onMounted(() =>{
+        storeAuth.init()
+        storePubs.getpub(route.params.id)
+        
+        
+        
+  })
+
 </script> 
 
 <script>
+
 import Pubs from "../data";
 
+
 export default {
+  
   name: "AnPucan",
 
   data() {
@@ -331,6 +313,9 @@ export default {
   
 
   methods: {
+
+    
+    
     setRating(type, value) {
       this[type + "Rating"] = value;
     },

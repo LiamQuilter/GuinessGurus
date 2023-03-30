@@ -35,15 +35,46 @@
 
 
 </script>
+<script setup>
+
+import {onMounted, ref} from "vue"
+import { usestoreAuth } from "@/stores/storeauth"
+import { usestoreUser } from "@/stores/storeuser"
+
+const storeAuth = usestoreAuth()
+const storeUser = usestoreUser()
+
+
+onMounted(() =>{
+  storeAuth.init()
+})
+
+const newFirstName = ref("")
+const newLastName = ref("")
+const newUserName = ref("")
+
+const applyProfileChanges =() =>{
+
+    storeUser.applyProfileChanges(newFirstName.value, newLastName.value, newUserName.value,)
+
+ newFirstName.value = ""
+ newLastName.value = ""
+ newUserName.value = ""
+
+}
+
+</script>
 <template>
-    <div class="tile is-ancestor">
+    <div  class="tile is-ancestor">
         <div class="tile is-parent is-4">
-            <article class="tile is-child box is-primary">
+            <article  class="tile is-child box is-primary">
                 <p class="title">Details</p>
                 <p class="subtitle fa-regular fa-circle-user fa-2xl"></p>
-                <p class="subtitle"><br><Strong>First Name: </Strong>{{ firstName }}<br></p>
-                <p class="subtitle"><br><Strong>Last Name: </Strong>{{ lastName }}<br></p>
-                <p class="subtitle"><br><Strong>Username: </Strong>{{ userName }}<br> </p>
+                <p class="subtitle"><br><Strong>Email: </Strong>{{ storeUser.User.email }}<br></p>
+                <p class="subtitle"><br><Strong>Password: </Strong>{{ storeUser.User.password }}<br></p>
+                <p class="subtitle"><br><Strong>Username: </Strong>{{ storeUser.User.username }}<br> </p>
+                <p class="subtitle"><br><Strong>FirstName: </Strong>{{ storeUser.User.firstname }}<br> </p>
+                <p class="subtitle"><br><Strong>LastName: </Strong>{{ storeUser.User.lastname }}<br> </p>
     
            </article>
         </div>
@@ -54,13 +85,13 @@
                         <p class="title">Update Profile</p>
 
                         <label class="label">First Name: </label>
-                        <input v-model ="newFirstName" class="input is-success" type="text" placeholder="First Name">
+                        <input v-model ="newFirstName" class="input is-success" type="text" placeholder="First Name" ref="newFirstNameref">
                     
                         <label class="label">Last Name: </label>
-                        <input v-model ="newLastName" class="input is-success" type="text" placeholder="Last Name">
+                        <input v-model ="newLastName" class="input is-success" type="text" placeholder="Last Name" ref="newFirstNameref">
     
                         <label class="label">Username: </label>
-                        <input v-model = "newUserName" class="input is-success" type="text" placeholder="Username">
+                        <input v-model = "newUserName" class="input is-success" type="text" placeholder="Username" ref="newFirstNameref">
                         <br><br>
 
                         <label class="label"><strong>Upload New Profile Picture:</strong></label>
