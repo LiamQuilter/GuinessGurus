@@ -175,6 +175,7 @@
   padding: 5px;
   border-radius: 5px;
   font-size: 14px;
+  opacity: 0.5;
 }
 
 
