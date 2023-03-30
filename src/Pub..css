@@ -4,6 +4,19 @@ body {
   font-size: 90%;
 }
 
+.comment-submit {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.comment-submit:hover {
+  transform: scale(1.2);
+  color: #dc3545;
+}
+
 /* Use flexbox to center the grid */
 body > .grid-container {
   display: flex;
@@ -56,7 +69,6 @@ body > .grid-container {
   max-width: 300px;
   height: 200px;
   object-fit: cover;
- 
 }
 
 .PubName {
@@ -81,7 +93,7 @@ body > .grid-container {
   color: red;
 }
 
-.blue-world{
+.blue-world {
   color: #007bff;
 }
 
@@ -117,7 +129,6 @@ body > .grid-container {
   transition: 0.4s;
   border: none;
   cursor: pointer;
- 
 }
 
 .submit-rating:hover,
@@ -143,22 +154,15 @@ body > .grid-container {
   margin: 0 0 0 50px; /* adjust the margin to your preferred distance from the image */
   float: left; /* float the element to the left to make it appear next to the image */
   background: #e1dede;
-  box-shadow:
-        /* The top layer shadow */ 0 1px 1px rgba(0, 0, 0, 0.15),
-    /* The second layer */ 0 10px 0 -5px #eee,
-    /* The second layer shadow */ 0 10px 1px -4px rgba(0, 0, 0, 0.15),
-    /* The third layer */ 0 20px 0 -10px #eee,
-    /* The third layer shadow */ 0 20px 1px -9px rgba(0, 0, 0, 0.15);
-  /* Padding for demo purposes */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee,
+    0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,
+    0 20px 1px -9px rgba(0, 0, 0, 0.15);
   padding: 30px;
 }
 
-.CommentContent{
-  width:200px;
+.CommentContent {
+  width: 200px;
 }
-
-
-
 
 .question {
   font-family: "Pacifico", cursive;
@@ -270,18 +274,22 @@ p {
   font-size: 16px;
   line-height: 1.5;
 }
-.insta{
+.insta {
   color: rgb(225, 48, 108);
   font-size: medium;
 }
-.links{
-  background-color: white; border-radius: 10px; padding: 10px;
+.links {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
-.whiteBorderStar{
-  background-color: white; border-radius: 10px; padding: 10px;
+.whiteBorderStar {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
-.ratingStatment{
-  font-family: 'Dancing Script', cursive;
+.ratingStatment {
+  font-family: "Dancing Script", cursive;
 }
 .comment-section {
   max-width: 600px;
@@ -291,7 +299,6 @@ p {
 .comments {
   max-height: 300px; /* set the maximum height */
   overflow-y: auto; /* add a scrollbar */
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -302,7 +309,8 @@ p {
     grid-template-columns: 1fr; /* Change to single column layout */
     height: auto; /* Remove height constraint to allow content to expand */
   }
-  .line-before-image, .line-after-image {
+  .line-before-image,
+  .line-after-image {
     display: none; /* Hide vertical lines on smaller screens */
   }
   .left-column {
@@ -330,7 +338,7 @@ p {
   .nav {
     display: none;
   }
-  
+
   /* Add a new button to toggle the navigation menu on and off */
   .nav-toggle {
     display: block; /* Show the button */
@@ -343,12 +351,12 @@ p {
     font-size: 16px; /* Set the button font size */
     cursor: pointer; /* Add a pointer cursor on hover */
   }
-  
+
   /* Show the navigation menu when the button is clicked */
   .nav-toggle:checked + .nav {
     display: block;
   }
-  
+
   /* Hide the main content when the navigation menu is open */
   .nav-toggle:checked ~ .main {
     display: none;
@@ -367,7 +375,4 @@ p {
     display: flex;
     flex-direction: column;
   }
-
 }
-
-

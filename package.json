@@ -16,6 +16,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
     "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@googlemaps/js-api-loader": "^1.15.1",
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.23.1",
     "bulma": "^0.9.4",
@@ -24,7 +25,8 @@
     "pinia": "^2.0.33",
     "vue": "^3.2.47",
     "vue-head": "^2.2.0",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue3-google-map": "^0.15.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

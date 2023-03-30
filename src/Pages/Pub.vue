@@ -5,7 +5,8 @@
     href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
     rel="stylesheet"
   />
-
+  <link href="../Map.js"
+  >
   <link
     href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&family=Tilt+Prism&display=swap"
     rel="stylesheet"
@@ -122,29 +123,31 @@
       </div>
 
       <div class="comment-section">
-  <h2 class="question">Tell us what you think!</h2>
-  <form @submit.prevent="addcomments">
-    <div class="control">
-      <input v-model="newCommentsContent" class="input" type="text" placeholder="write your comment here!  ">
+       <h2 class="question">Tell us what you think!</h2>
+         <form @submit.prevent="addcomments">
+    <div class="form-control">
+      <input v-model="newCommentsContent" class="input" type="text" placeholder="Write your comment here!">
     </div>
-    <div class="control">
+    <div class="form-control">
       <button :disabled="!newCommentsContent" class="button is-primary">Submit</button>
     </div>
-  </form>
+          </form>
 
   <div class="comment-container">
     <div v-for="comment in comments" class="card">
-      <div class="card-content">
-        <div class="CommentContent">
+      <div class="card-content" style="padding: 10px;">
+        <div class="comment-content">
           {{ comment.content }}
           <button class="comment-submit" @click="deleteComment(comment.id)"><i class="fa-solid fa-trash"></i></button>
         </div>
       </div>
     </div>
   </div>
+
+
 </div>
       </div>
-   
+
     <div class="right">
       <h2 class="heading">{{ storePubs.Pubs.about }}</h2>
       <p>
@@ -205,6 +208,7 @@
 
       
       <h3 class="heading">Directions</h3>
+
 <div style="position:relative; padding-bottom:56.25%; height:0;">
    <iframe :src= "pub.Maps"
 style="border:0; position:absolute; top:0; left:0; width:100%; height:100%;" 
@@ -221,9 +225,11 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
 
   <div>
     
+
   </div>
   
 </template>
+
 
 <script setup>
 
@@ -242,6 +248,10 @@ const route = useRoute()
 
 const comments = ref([
 
+
+const info = ref([""
+
+  
 ])
 
 const newCommentsContent = ref("")
@@ -274,7 +284,10 @@ onMounted(() =>{
 </script> 
 
 <script>
-import  Pubs  from "../data"
+
+import Pubs from "../data";
+
+
 export default {
   
   name: "AnPucan",

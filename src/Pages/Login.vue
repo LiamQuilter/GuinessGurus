@@ -22,14 +22,17 @@
                     <i class="fa-solid fa-lock"></i>
                      <input v-model="credentials.password" type="password" placeholder="Password" name="">
                  </span><br>
-                     <button @click="storeAuth.loginuser" type="submit" id="login-btn">Login</button>
+                    <button @click="storeAuth.loginuser" type="submit" id="login-btn">Login</button>
+                    <br>
+                    <router-link class ="has-text-grey-light" to="/signup">Don't have an account?</router-link>
             </form>
 
-            <button
-            @click="storeAuth.logoutuser">
-            logout</button>
+            <a class ="has-text-white" type="submit" style="font-size: larger; text-decoration: underline;" @click="storeAuth.logoutuser">Sign Out</a>
         </div>
          </div>
+
+         
+
      
     
     </body>

@@ -23,25 +23,36 @@
     class="navbar"
     role="navigation"
     aria-label="main navigation"
+    style="justify-content: center;"
     
     
   >
-    <div class="navbar-end">
-      <a>
+
+
+
+  <a>
         <router-link to="/">
-          <h2 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Guinness Gurus</h2>
+          <h2 class="title">Pint Pals</h2>
         </router-link>
       </a>
-    </div>
 
+</nav>
 
-
-    
-
-
-    <div class="navbar-end">
-      <div class="navbar-item">
+      <div class="navbar-end" style="background-color: black;">
+      <div class="navbar-item" style="background-color: black;">
         <div class="buttons">
+
+          <router-link
+
+            to="/Mapapi"
+            class="button is-white"
+            data-tooltip="Sign Up"
+            onmouseover="this.dispatchEvent(new Event('mouseenter'))"
+            onmouseout="this.dispatchEvent(new Event('mouseleave'))"
+          >
+            <strong><i class="fa-solid fa-compass fa-xl"></i></strong>
+          </router-link>
+
 
           <router-link
             to="/Map"
@@ -49,8 +60,9 @@
             onmouseover="this.dispatchEvent(new Event('mouseenter'))"
             onmouseout="this.dispatchEvent(new Event('mouseleave'))"
           >
-            <strong><i class="fa-solid fa-map-location-dot"></i></strong>
+            <strong><i class="fa-solid fa-map-location-dot fa-lg"></i></strong>
           </router-link>
+
 
           <router-link
             to="/signup"
@@ -87,14 +99,16 @@
     
       </div>
     </div>
-  </nav>
+  
 </template>
 
 
 
 
 <style scoped>
+
   .navbar {
+    
     animation: change-colors 50s ease forwards;
   }
   @keyframes change-colors {
@@ -133,22 +147,6 @@
   }
 }
 
-.navbar-start {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-start .buttons {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-start .buttons a:not(:last-child) {
-  margin-right: 10px;
-}
-
-
-
 @media screen and (max-width: 1023px) {
   .navbar-start .buttons {
     margin-right: auto;
@@ -162,8 +160,9 @@
     display: block;
     font-size: 0.8em;
     text-align: center;
-  }
+  }  
 }
+
 
 
 .button.is-white:hover strong:before {
@@ -180,9 +179,16 @@
 
 
 .button:hover {
-  transform: translateX(-10px);
+  transform: translateY(-5px);
   opacity: 1;
  
+}
+
+.navbar-end {
+  display: flex;
+  justify-content: center; /* horizontally center the contents */
+  grid-column: 3 / span 2; /* span 2 columns starting from the second column */
+  
 }
 
 .title {
@@ -190,16 +196,20 @@
     font-family: 'Lora', serif;
     font-weight: bold;
     padding-top: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     color: #fefdfc; /* Darker shade of gold */
     text-shadow: #000;
     display: inline-block; /* Ensures that the border wraps around the text */
     padding-left: 20px; /* Adds some padding to the left of the text */
     padding-right: 20px; /* Adds some padding to the right of the text */
     animation-name: changeColor;
-  animation-duration: 1s;
-  animation-delay: 43s;
-  animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 43s;
+    animation-fill-mode: forwards;
+    display: block;
+    text-align: center;
+    justify-content: center;
+   
 }
 
 @keyframes changeColor {
@@ -220,5 +230,10 @@
 .button.is-Home {
   margin-right: 10px;
 }
+
+
+
+
+
 
 </style>
