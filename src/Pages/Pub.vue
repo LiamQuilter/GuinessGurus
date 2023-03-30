@@ -135,7 +135,7 @@
 
   <div class="comment-container">
     <div v-for="comment in comments" class="card">
-      <div class="card-content" style="padding: 10px;">
+      <div class="card-content">
         <div class="comment-content">
           {{ comment.content }}
           <button class="comment-submit" @click="deleteComment(comment.id)"><i class="fa-solid fa-trash"></i></button>
@@ -249,7 +249,7 @@ const route = useRoute()
 const comments = ref([
 
 
-const info = ref([""
+
 
   
 ])

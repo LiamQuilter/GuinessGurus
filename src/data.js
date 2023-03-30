@@ -5,6 +5,9 @@ import {ref, onMounted} from "vue"
 const Pubs = [
    {
     id: 1,
+    title: "an Pucan",
+    address: "11 Forster Street, Galway City, Ireland",
+    phoneNumber: "+353 91 376 561",
     imageSrc: "../Images/An-Pucan.jpg",
      instagramLink: "https://www.instagram.com/anpucan/",
      websiteLink: "https://anpucan.ie/ ",
