@@ -5,6 +5,7 @@ import {ref, onMounted} from "vue"
 const Pubs = [
    {
     id: 1,
+
     title: "An Pucan",
     address: "11 Forster Street, Galway City, Ireland",
     phoneNumber: " +353 91 376 561",
