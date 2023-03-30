@@ -249,7 +249,7 @@ const route = useRoute()
 const comments = ref([
 
 
-const info = ref([""
+
 
   
 ])
