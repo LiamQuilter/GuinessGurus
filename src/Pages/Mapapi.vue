@@ -1,225 +1,133 @@
 <template>
-  <GoogleMap
-    api-key="AIzaSyA6elK6y7iSn2wZu5kvEsU-1fgqMJt_86o"
-    style="width: 100%; height: 500px"
-    :center="currPos"
-    :zoom="15"
-  >
-    <MarkerCluster>
-      <Marker v-for="(location, i) in locations" :options="{ position: location }" :key="i" />
-    </MarkerCluster>
-  </GoogleMap>
+  <div>
+    <select v-model="selectedLocation" @change="drawPolyline">
+      <option disabled value="">Select a location</option>
+      <option v-for="(location, index) in locations" :key="index" :value="location">{{ location.name }}</option>
+    </select>
+    <GoogleMap
+      v-if="currPos"
+      api-key="AIzaSyA6elK6y7iSn2wZu5kvEsU-1fgqMJt_86o"
+      :center="center"
+      :zoom="15"
+      :styles="mapStyles"
+      style="width: 100%; height: 500px"
+      @load="onMapLoad"
+    >
+      <Marker :options="{ position: currPos, icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png' }" />
+      <MarkerCluster>
+  <div>
+    <Marker
+      v-for="(location, i) in locations"
+      :options="{ position: location, label: `${location.name} (${getDistance(currPos, location)} km)`, icon: null }"
+      :key="i"
+      v-show="!selectedLocation || selectedLocation.name === location.name"
+    />
+  </div>
+</MarkerCluster>
+      <!-- Polylines should be defined inside the <GoogleMap> component -->
+      <Polyline
+        v-for="(polyline, index) in polylines"
+        :options="{ path: polyline.path, strokeColor: 'BLACK', strokeOpacity: 1.0, strokeWeight: 2 }"
+        :key="index"
+      />
+    </GoogleMap>
+  </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import { GoogleMap, Marker, MarkerCluster } from 'vue3-google-map'
-import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
-import { useGeolocation } from '../useGeolocation'
+import { defineComponent, computed, reactive } from "vue";
+import { GoogleMap, Marker, MarkerCluster, Polyline } from "vue3-google-map";
+import { useGeolocation } from "../useGeolocation";
 
 export default defineComponent({
-  name: 'App',
-  components: { GoogleMap, Marker, MarkerCluster },
-  
+  name: "App",
+  components: { GoogleMap, Marker, MarkerCluster, Polyline },
   setup() {
-    //const center = { lat: 53.278195, lng: -9.060110 }
-
-    const { coords } = useGeolocation()
+    const { coords } = useGeolocation();
+    const center = computed(() => ({
+      lat: coords.value ? coords.value.latitude : 53.278195,
+      lng: coords.value ? coords.value.longitude : -9.060110,
+    }));
     const currPos = computed(() => ({
-      lat: coords.value.latitude,
-      lng: coords.value.longitude
-    }))
-    const otherPos = ref(null)
-    //const loader = new Loader({ apiKey: GOOGLE_MAPS_API_KEY })
-    const mapDiv = ref(null)
-    let map = ref(null)
-    let clickListener = null
-    let line = null
+      lat: coords.value ? coords.value.latitude : 53.278195,
+      lng: coords.value ? coords.value.longitude : -9.060110,
+    }));
+    const mapStyles = [
+      {
+        featureType: "all",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }],
+      },
+    ];
 
-    onMounted(async () => {
-      await loader.load()
-      map.value = new google.maps.Map(mapDiv.value, {
-        center: currPos.value,
-        zoom: 7
-      })
-      clickListener = map.value.addListener(
-        'click',
-        ({ latLng: { lat, lng } }) => {
-          (otherPos.value = { lat: lat(), lng: lng() });
-          console.log("hello");
-          console.log(lat(), lng());
-        }
-      )
-    })
-    onUnmounted(async () => {
-      if (clickListener) clickListener.remove()
-    })
-
-    watch([map, currPos, otherPos], () => {
-      if (line) line.setMap(null)
-      if (map.value && otherPos.value != null) {
-        line = new google.maps.Polyline({
-          path: [currPos.value, otherPos.value],
-          map: map.value
-        })
-      }
-      else {
-        line = null // Remove the line
-      }
-    })
     const locations = [
-      {lat: 53.274527, lng: -9.047445 },
-      {lat:53.271781,  lng:-9.054982},
-      {lat: 53.270159, lng: -9.058355},
-      {lat: 53.271646, lng: -9.054319},//buskers
-      {lat: 53.271662, lng: -9.054104},//front door
-      {lat: 53.275362, lng: -9.049395},//mcgettigans
-      {lat: 53.272363, lng: -9.053126},
-      {lat: 53.272360, lng: -9.053549 },
-      {lat: 53.272135, lng: -9.053305},
-      {lat: 53.272485, lng: -9.062739},
-      {lat: 53.271815, lng: -9.053436},
-      {lat: 53.275685, lng: -9.063187}
-    
-    ]
-    return { locations, currPos, mapDiv }
+      { lat: 53.274527, lng: -9.047445, name: "Pucan" },
+      { lat: 53.271781, lng: -9.054982, name: "Seven" },
+      { lat: 53.270159, lng: -9.058355, name: "Taylors" },
+      { lat: 53.271646, lng: -9.054319, name: "Buskers" },
+      { lat: 53.271662, lng: -9.054104, name: "Front Door" },
+      { lat: 53.275362, lng: -9.049395, name: "Mc Gettigans" },
+      { lat: 53.272363, lng: -9.053126, name: "Taaffes" },
+      { lat: 53.27236, lng: -9.053549, name: "Tig Coili" },
+      { lat: 53.272135, lng: -9.053305, name: "Kings Head" },
+      { lat: 53.272485, lng: -9.062739, name: "Cookes" },
+      { lat: 53.271815, lng: -9.053436, name: "Freeneys" },
+      { lat: 53.275685, lng: -9.063187, name: "Sliding Rock" },
+    ];
+
+    const polylines = reactive([]);
+
+    const getDistance = (pos1, pos2) => {
+      const R = 6371; // Earth's radius in km
+      const dLat = (pos2.lat - pos1.lat) * Math.PI / 180;
+      const dLon = (pos2.lng - pos1.lng) * Math.PI / 180;
+      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(pos1.lat * Math.PI / 180) * Math.cos(pos2.lat * Math.PI / 180) *
+              Math.sin(dLon/2) * Math.sin(dLon/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      const distance = R * c;
+      return distance.toFixed(2); // Return distance in km with 2 decimal places
+    };
+
+    const selectedLocation = reactive({});
+
+    const onMapLoad = (map) => {
+      // Do something when the map is loaded
+    };
+
+    const drawPolyline = () => {
+      if (!selectedLocation.lat) {
+        return;
+      }
+
+      const polylinePath = [
+        { lat: currPos.value.lat, lng: currPos.value.lng },
+        { lat: selectedLocation.lat, lng: selectedLocation.lng },
+      ];
+
+      polylines.splice(0, polylines.length, polylinePath);
+    };
+
+    return {
+      coords,
+      center,
+      currPos,
+      mapStyles,
+      locations,
+      selectedLocation,
+      onMapLoad,
+      getDistance,
+      drawPolyline,
+      polylines,
+    };
   },
-})
-</script>
-
-
-
-<!-- <script>
-/* eslint-disable no-undef */
-import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
-import { useGeolocation } from '../useGeolocation'
-import { Loader } from '@googlemaps/js-api-loader'
-const GOOGLE_MAPS_API_KEY = 'AIzaSyA6elK6y7iSn2wZu5kvEsU-1fgqMJt_86o'
-export default {
-  name: 'App',
-  setup() {
-    const { coords } = useGeolocation()
-    const currPos = computed(() => ({
-      lat: coords.value.latitude,
-      lng: coords.value.longitude
-    }))
-    const otherPos = ref(null)
-    const loader = new Loader({ apiKey: GOOGLE_MAPS_API_KEY })
-    const mapDiv = ref(null)
-    let map = ref(null)
-    let clickListener = null
-    onMounted(async () => {
-      await loader.load()
-      map.value = new google.maps.Map(mapDiv.value, {
-        center: currPos.value,
-        zoom: 7
-      })
-      clickListener = map.value.addListener(
-        'click',
-        ({ latLng: { lat, lng } }) => {
-          (otherPos.value = { lat: lat(), lng: lng() });
-            console.log("hello");
-            console.log(lat(), lng());
-            console.log()
-        }
-      )
-
-
-
-      //------------------------------
-//         var origin1 = new google.maps.LatLng(55.930385, -3.118425);
-//         var origin2 = 'Greenwich, England';
-//         var destinationA = '11 Forster St, Galway, H91 P65D';
-//         var destinationB = new google.maps.LatLng(50.087692, 14.421150);
-
-//         var service = new google.maps.DistanceMatrixService();
-//         service.getDistanceMatrix(
-//         {
-//             origins: [origin1, origin2],
-//             destinations: [destinationA, destinationB],
-//             travelMode: 'WALKING'
-//             }, callback);
-
-// function callback(response, status) {
-//   // See Parsing the Results for
-//   // the basics of a callback function.
-//   console.log("result from api call");
-//   console.log(response);
-// }
-
-      //----------------------------------
-    })
-    onUnmounted(async () => {
-      if (clickListener) clickListener.remove()
-    })
-    let line = null
-    watch([map, currPos, otherPos], () => {
-      if (line) line.setMap(null)
-      if (map.value && otherPos.value != null)
-        line = new google.maps.Polyline({
-          path: [currPos.value, otherPos.value],
-          map: map.value
-        })
-    })
-    const haversineDistance = (pos1, pos2) => {
-      const R = 3958.8 // Radius of the Earth in miles
-      const rlat1 = pos1.lat * (Math.PI / 180) // Convert degrees to radians
-      const rlat2 = pos2.lat * (Math.PI / 180) // Convert degrees to radians
-      const difflat = rlat2 - rlat1 // Radian difference (latitudes)
-      const difflon = (pos2.lng - pos1.lng) * (Math.PI / 180) // Radian difference (longitudes)
-      const d =
-        2 *
-        R *
-        Math.asin(
-          Math.sqrt(
-            Math.sin(difflat / 2) * Math.sin(difflat / 2) +
-              Math.cos(rlat1) *
-                Math.cos(rlat2) *
-                Math.sin(difflon / 2) *
-                Math.sin(difflon / 2)
-          )
-        )
-      return d
-    }
-    const distance = computed(() =>
-      otherPos.value === null
-        ? 0
-        : haversineDistance(currPos.value, otherPos.value)
-    )
-
-
-
-
-
-
-    //------------------------------------------------------------
-    return { currPos, otherPos, distance, mapDiv }
-  }
-}
-
-
+});
 
 </script>
 
-<template>
-    <div class="d-flex text-center" style="height: 20vh">
-      <div class="m-auto">
-        <h4>Your Position</h4>
-        Latitude: {{ currPos.lat.toFixed(2) }}, Longitude:
-        {{ currPos.lng.toFixed(2) }}
-      </div>
-      <div class="m-auto">
-        <h4>Distance</h4>
-        {{ distance.toFixed(2) }} miles
-      </div>
-      <div class="m-auto">
-        <h4>Clicked Position</h4>
-        <span v-if="otherPos">
-          Latitude: {{ otherPos.lat.toFixed(2) }}, Longitude:
-          {{ otherPos.lng.toFixed(2) }}
-        </span>
-        <span v-else>Click the map to select a position</span>
-      </div>
-    </div>
-    <div ref="mapDiv" style="width: 100%; height: 80vh" />
-  </template> -->
+
+
+
+
+
+
