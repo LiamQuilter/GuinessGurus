@@ -27,6 +27,18 @@ export default {
 };
 </script>
 
+<script setup>
+import {onMounted} from "vue"
+import { usestoreAuth } from "@/stores/storeauth"
+
+const storeAuth = usestoreAuth()
+
+onMounted(() =>{
+  storeAuth.init()
+})
+
+</script>
+
 <style scoped>
 
 body{

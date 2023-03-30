@@ -36,20 +36,16 @@
     </template>
 
     <script setup>
-    import {ref, computed, reactive} from "vue"
+    import {ref, computed, reactive, onMounted} from "vue"
     import { usestoreAuth } from "@/stores/storeauth"
 
-
         const storeAuth = usestoreAuth()
-
         const credentials = reactive({
         email: "",
         password:""
+        })
 
-    })
-
-
-    const onSubmit = () =>{
+        const onSubmit = () =>{
         if(!credentials.email || !credentials.password){
             alert("please enter a email and password")
         }
@@ -57,6 +53,10 @@
             storeAuth.loginuser(credentials)
         }
     }
+
+    onMounted(() =>{
+        storeAuth.init()
+    })
     </script>
 
 
