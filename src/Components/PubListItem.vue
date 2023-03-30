@@ -34,7 +34,7 @@
       <i class="fa-sharp fa-solid fa-phone-volume"
       style=" color:black; font-size: 15px"
       ></i>
-      {{ pub.phoneNumber }}
+      {{pub.phoneNumber }}
       <br />
       <div style="display: flex; align-items: center">
         <p style="margin-right: 10px">
@@ -62,7 +62,15 @@
     </div>
   </div>
 </template>
+<script setup>
 
+import { usestorepubs} from "@/stores/storePubs"
+
+const storePubs = usestorepubs()
+
+
+
+</script>
 <script>
 export default {
   name: "PubListItem",

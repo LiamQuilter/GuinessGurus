@@ -5,9 +5,11 @@ import {ref, onMounted} from "vue"
 const Pubs = [
    {
     id: 1,
-    title: "an Pucan",
+
+    title: "An Pucan",
     address: "11 Forster Street, Galway City, Ireland",
-    phoneNumber: "+353 91 376 561",
+    phoneNumber: " +353 91 376 561",
+    email: "info@anpucan.ie",
     imageSrc: "../Images/An-Pucan.jpg",
      instagramLink: "https://www.instagram.com/anpucan/",
      websiteLink: "https://anpucan.ie/ ",
@@ -17,6 +19,10 @@ const Pubs = [
   
   {
     id: 2,
+    title: "Seven Bar And Restaurant",
+      address: "5-7 Bridge Street, Galway City, Ireland",
+      phoneNumber: " +353 91 563 804",
+      email: "info@sevenbridgestreet.ie",
     imageSrc: "../Images/Seven-Bridge-Street.jpg",
     instagramLink: "https://www.instagram.com/sevengalway/",
     websiteLink: "http://sevenbridgestreet.ie/",
@@ -25,6 +31,10 @@ const Pubs = [
   
   {
     id: 3,
+    title: "Taylor's Bar and Beer Garden",
+      address: "7 Dominick Street Upper, Galway City, Ireland",
+      phoneNumber: " +353 91 450 475",
+      email: "info@taylorsgalway.ie",
     imageSrc: "../Images/Taylors-Bar.jpg",
     instagramLink: "https://www.instagram.com/taylorsgalway/",
     websiteLink: "https://taylorsgalway.ie/",
@@ -32,6 +42,10 @@ const Pubs = [
     },
     {
     id: 4,
+    title: "Busker Brownes",
+      address: "3-5 Cross Street Upper, Galway City, Ireland",
+      phoneNumber: " +353 91 563 377",
+      email: "info@buskerbrownes.com",
     imageSrc: "../Images/Busker-Brownes.jpg",
     instagramLink: "https://www.instagram.com/buskerbrownes.kirbysrestaurant/",
     websiteLink: "https://www.buskerbrownes.com/",
@@ -39,6 +53,10 @@ const Pubs = [
     },
     {
     id: 5,
+    title: "Sliding Rock",
+      address: "8 Cross Street & High Street, Galway City, Ireland",
+      phoneNumber: " +353 91 722 131",
+      email: "info@frontdoorpub.com",
     imageSrc: "../Images/The-Front-Door-Pub-Galway.jpg",
     instagramLink: "https://www.instagram.com/frontdoorpub/",
     websiteLink: "https://www.frontdoorpub.com/",
@@ -46,6 +64,10 @@ const Pubs = [
     },
     {
       id: 6,
+      title: "The Front Door",
+      address: "9-11 Prospect Hill, Eyre Square, Galway City, Ireland",
+      phoneNumber: " +353 91 331 010",
+      email: "info@mcgettigans.com",
       imageSrc: "../Images/mc gett.jpg",
       instagramLink: "https://www.instagram.com/mcggalway/",
       websiteLink: "https://www.mcgettigans.com/galway-ireland.html",
@@ -53,6 +75,10 @@ const Pubs = [
     }, 
     {
       id: 7,
+      title: "Taaffes",
+      address: "19 Shop Street, Galway City, Ireland",
+      phoneNumber: " +353 91 564 066",
+      email: "info@taaffesbar.ie",
       imageSrc: "../Images/Taaffes.jpg",
       instagramLink: "https://www.instagram.com/taaffesbar/",
       websiteLink: "https://taaffesbar.ie/",
@@ -60,6 +86,10 @@ const Pubs = [
     },
     {
       id: 8,
+      title: "Tig Cóilí",
+      address: "Tig Cóilí, Mainguard Street, Galway City, Ireland",
+      phoneNumber: " +353 91 561 294",
+      email: "info@tigchoili.ie",
       imageSrc: "../Images/tigh coli.jpg",
       instagramLink: "https://www.instagram.com/tigchoili/",
       websiteLink: "https://tigchoiligalway.com/",
@@ -68,6 +98,10 @@ const Pubs = [
 
     {
       id: 9,
+      title: "Sliding Rock",
+      address: "37 NewCastle Road, Galway City, Ireland",
+      phoneNumber: " +353 91 722 131",
+      email: "info@theslidingrock.ie",
       imageSrc: "../Images/Kings-Head.jpg",
       instagramLink: "https://www.instagram.com/thekingsheadgalway/",
       websiteLink: "https://www.thekingshead.ie/",
@@ -76,6 +110,10 @@ const Pubs = [
     },
     {
       id: 10,
+      title: "The Kings Head",
+      address: "15 High Street, Galway City, Ireland",
+      phoneNumber: " +353 91 566 630",
+      email: "info@thekingshead.ie",
       imageSrc: "../Images/Event.jpg",
       instagramLink: "https://www.instagram.com/cookes_food/",
       websiteLink: "https://www.facebook.com/cookesgalway/",
@@ -85,6 +123,10 @@ const Pubs = [
     
     {
       id: 11,
+      title: "Sliding Rock",
+      address: "37 NewCastle Road, Galway City, Ireland",
+      phoneNumber: " +353 91 722 131",
+      email: "info@theslidingrock.ie",
       imageSrc: "../Images/Freeneys.jpg",
       instagramLink:
         "https://www.facebook.com/pages/Freeneys-Bar/172385122797626/",
@@ -94,10 +136,10 @@ const Pubs = [
     {
       id: 12,
       imageSrc: "../Images/425109315.jpg",
-      title: "Sliding Rock",
-      address: "37 NewCastle Road, Galway City, Ireland",
       instagramLink: "https://www.facebook.com/theslidingrock/",
       websiteLink: "https://www.theslidingrock.ie/",
+      title: "Sliding Rock",
+      address: "37 NewCastle Road, Galway City, Ireland",
       phoneNumber: " +353 91 722 131",
       email: "info@theslidingrock.ie",
       about: "About Sliding Rock",
